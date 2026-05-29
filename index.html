@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='10' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white'%3Ea%3C/text%3E%3Ctext x='22' y='16' font-family='Arial' font-size='8' font-weight='500' fill='%23f9a8d4'%3Eai%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMA – AI Social Growth Assistant</title>
+<title>AMA – AI Marketing Assistant</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -42,7 +43,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .how-section h2{font-size:30px;font-weight:700;color:#111827;margin-bottom:48px}
 .how-steps{display:flex;align-items:flex-start;justify-content:center;max-width:1100px;margin:0 auto}
 .how-step{flex:1;text-align:center;padding:0 6px}
-.how-icon{width:52px;height:52px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
+.how-icon{width:66px;height:66px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
 .how-step h4{font-size:13px;font-weight:700;color:#111827;margin-bottom:6px}
 .how-step p{font-size:12px;color:#6b7280;line-height:1.5}
 .how-arrow{display:flex;align-items:center;padding-top:18px;color:#9ca3af;font-size:18px;flex-shrink:0}
@@ -66,7 +67,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .handle-wrap input{padding-left:26px}
 .join-btn{width:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
 .no-spam{text-align:center;font-size:12px;color:#9ca3af;margin-top:10px}
-footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:flex;align-items:center;justify-content:space-between}
+footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:flex;align-items:center;justify-content:center}
+
+/* Success popup */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center}
+.popup-overlay.show{display:flex}
+.popup-box{background:#fff;border-radius:20px;padding:40px 48px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);max-width:420px;width:90%;animation:popIn 0.3s ease}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.popup-icon{font-size:48px;margin-bottom:16px}
+.popup-title{font-size:22px;font-weight:800;color:#111827;margin-bottom:8px}
+.popup-sub{font-size:15px;color:#6b7280;line-height:1.6}
+.popup-bar{height:4px;background:#e5e7eb;border-radius:2px;margin-top:24px;overflow:hidden}
+.popup-bar-fill{height:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);border-radius:2px;animation:drain 5s linear forwards}
+@keyframes drain{from{width:100%}to{width:0%}}
 </style>
 </head>
 <body>
@@ -77,7 +90,7 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
     <span class="ama-logo-nav">ama<sup>ai</sup></span>
   </div>
   <div class="nav-links">
-    <a href="#how">How it Works</a><a href="#waitlist">Join Waitlist</a>
+    <a href="#who">Who it's For</a><a href="#how">How it Works</a><a href="#benefits">What You Get</a><a href="#waitlist">Join Waitlist</a>
   </div>
   <button class="nav-cta">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="white"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
@@ -89,8 +102,8 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 <section>
 <div class="hero-wrap">
   <div class="hero hero-text">
-    <span class="hero-badge">AI Social Growth Assistant</span>
-    <h1>AMA studies your Instagram and <span>plans your next posts.</span></h1>
+    <span class="hero-badge">AI Marketing Assistant</span>
+    <h1>AMA studies your Instagram and <span>tells you what to post next.</span></h1>
     <p>Get smart insights, a personalized posting plan, and ready-to-post content that gets engagement.</p>
     <div>
       <button class="hero-btn">
@@ -179,37 +192,91 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 </div>
 </section>
 
+
+<!-- IF INSTAGRAM HELPS YOU GET CUSTOMERS -->
+<section id="who" style="background:#fff;padding:80px 48px;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:34px;font-weight:800;color:#111827;margin-bottom:12px;">If Instagram helps you get customers,<br><span style="color:#7c3aed;">AMA is for you.</span></h2>
+    <p style="font-size:16px;color:#6b7280;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;">Built for businesses that need consistent content without hiring an agency.</p>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;">
+
+      <!-- Salon -->
+      <div style="background:#fdf4ff;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #f3e8ff;">
+        <div style="height:100px;background:linear-gradient(135deg,#f3e8ff,#ede9fe);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">💇‍♀️</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Salon</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Show off transformations &amp; book more chairs</div>
+      </div>
+
+      <!-- Clinic -->
+      <div style="background:#f0fdf4;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #bbf7d0;">
+        <div style="height:100px;background:linear-gradient(135deg,#dcfce7,#bbf7d0);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🏥</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Clinic</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Build trust with patients before they walk in</div>
+      </div>
+
+      <!-- Cafe -->
+      <div style="background:#fff7ed;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #fed7aa;">
+        <div style="height:100px;background:linear-gradient(135deg,#ffedd5,#fed7aa);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">☕</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Cafe</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Turn followers into daily regulars</div>
+      </div>
+
+      <!-- Events -->
+      <div style="background:#eff6ff;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #bfdbfe;">
+        <div style="height:100px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🎉</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Events</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Fill seats faster with the right content</div>
+      </div>
+
+      <!-- Photographer -->
+      <div style="background:#fefce8;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #fef08a;">
+        <div style="height:100px;background:linear-gradient(135deg,#fef9c3,#fef08a);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">📸</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Photographer</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Showcase your work &amp; attract dream clients</div>
+      </div>
+
+      <!-- Coach -->
+      <div style="background:#fdf2f8;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #f9a8d4;">
+        <div style="height:100px;background:linear-gradient(135deg,#fce7f3,#fbcfe8);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🎯</div>
+        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Coach</div>
+        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Grow your authority and get more enquiries</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how">
   <h2>How AMA works</h2>
   <div class="how-steps">
     <div class="how-step">
-      <div class="how-icon"><svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#ig1)"/><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="white" stroke-width="2.5"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="2.5"/><circle cx="32" cy="16" r="2" fill="white"/></svg></div>
+      <div class="how-icon"><svg viewBox="0 0 48 48" width="62" height="62" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#ig1)"/><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="white" stroke-width="2.5"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="2.5"/><circle cx="32" cy="16" r="2" fill="white"/></svg></div>
       <h4>1. Connect Instagram</h4><p>You securely connect your Instagram account — takes 30 seconds</p>
     </div>
     <div class="how-arrow">&#8594;</div>
     <div class="how-step">
-      <div class="how-icon"><div style="width:48px;height:48px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#10022;</div></div>
+      <div class="how-icon"><div style="width:62px;height:62px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#10022;</div></div>
       <h4>2. AMA Analyzes</h4><p>We study your content, engagement &amp; audience in depth</p>
     </div>
     <div class="how-arrow">&#8594;</div>
     <div class="how-step">
-      <div class="how-icon"><div style="width:48px;height:48px;border:2.5px solid #7c3aed;border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:20px;height:20px;border:2.5px solid #7c3aed;border-radius:50%;"></div></div></div>
+      <div class="how-icon"><div style="width:62px;height:62px;border:3px solid #7c3aed;border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:26px;height:26px;border:3px solid #7c3aed;border-radius:50%;"></div></div></div>
       <h4>3. Uncover Opportunities</h4><p>We find what's working, what's missing &amp; what your audience craves</p>
     </div>
     <div class="how-arrow">&#8594;</div>
     <div class="how-step">
-      <div class="how-icon"><div style="width:48px;height:48px;background:#ede9fe;border-radius:12px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div></div>
+      <div class="how-icon"><div style="width:62px;height:62px;background:#ede9fe;border-radius:14px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div></div>
       <h4>4. Build Your Plan</h4><p>We give you a personalized weekly posting plan that gets you maximum engagement with your audience</p>
     </div>
     <div class="how-arrow">&#8594;</div>
     <div class="how-step">
-      <div class="how-icon"><div style="width:48px;height:48px;background:#ede9fe;border-radius:12px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div></div>
+      <div class="how-icon"><div style="width:62px;height:62px;background:#ede9fe;border-radius:14px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div></div>
       <h4>5. Generate Content</h4><p>We create scroll-stopping posts, captions &amp; creatives ready to publish</p>
     </div>
     <div class="how-arrow">&#8594;</div>
     <div class="how-step">
-      <div class="how-icon"><div style="width:48px;height:48px;background:#ede9fe;border-radius:12px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div></div>
+      <div class="how-icon"><div style="width:62px;height:62px;background:#ede9fe;border-radius:14px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div></div>
       <h4>6. Post &amp; Grow</h4><p>You post, stay consistent &amp; watch your audience grow</p>
     </div>
   </div>
@@ -427,6 +494,41 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 </div>
 </div>
 
+<!-- WHAT AMA GIVES YOU -->
+<section id="benefits" style="background:#f9fafb;padding:80px 48px;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:32px;font-weight:800;color:#111827;margin-bottom:12px;">What AMA actually gives you</h2>
+    <p style="font-size:16px;color:#6b7280;margin-bottom:48px;">No more guessing what to post. Here's exactly what lands in your hands.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left;">
+
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+        <div style="font-size:32px;margin-bottom:16px;">&#128202;</div>
+        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Instagram Insights</div>
+        <div style="font-size:14px;color:#6b7280;line-height:1.6;">See what's working and what's hurting your growth — in plain language.</div>
+      </div>
+
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+        <div style="font-size:32px;margin-bottom:16px;">&#128197;</div>
+        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Weekly Content Plan</div>
+        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Know exactly what to post every day of the week — no blank-page panic.</div>
+      </div>
+
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+        <div style="font-size:32px;margin-bottom:16px;">&#127912;</div>
+        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Ready-to-Post Creatives</div>
+        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Instagram-ready visuals generated specifically for your business and audience.</div>
+      </div>
+
+      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+        <div style="font-size:32px;margin-bottom:16px;">&#9997;&#65039;</div>
+        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Captions &amp; Hashtags</div>
+        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Ready-to-publish copy optimised for engagement with your specific audience.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
   <div class="waitlist-inner">
@@ -460,19 +562,55 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 
 <!-- FOOTER -->
 <footer>
-  <div style="font-size:13px;color:#374151;font-weight:500;">Loved by 50+ businesses already</div>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <span style="color:#f59e0b;font-size:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-    <span style="font-size:13px;font-weight:700;color:#374151;">4.9/5</span>
-  </div>
-  <div style="display:flex;align-items:center;">
-    <img src="https://i.pravatar.cc/100?img=47" width="34" height="34" style="border-radius:50%;border:2px solid #fff;object-fit:cover;" alt="user"/>
-    <img src="https://i.pravatar.cc/100?img=12" width="34" height="34" style="border-radius:50%;border:2px solid #fff;margin-left:-10px;object-fit:cover;" alt="user"/>
-    <img src="https://i.pravatar.cc/100?img=32" width="34" height="34" style="border-radius:50%;border:2px solid #fff;margin-left:-10px;object-fit:cover;" alt="user"/>
-    <img src="https://i.pravatar.cc/100?img=5"  width="34" height="34" style="border-radius:50%;border:2px solid #fff;margin-left:-10px;object-fit:cover;" alt="user"/>
-    <img src="https://i.pravatar.cc/100?img=68" width="34" height="34" style="border-radius:50%;border:2px solid #fff;margin-left:-10px;object-fit:cover;" alt="user"/>
-  </div>
+  <div style="font-size:13px;color:#374151;font-weight:500;">Join the first AMA beta cohort.</div>
+
 </footer>
 
+
+<!-- SUCCESS POPUP -->
+<div class="popup-overlay" id="successPopup">
+  <div class="popup-box">
+    <div class="popup-icon">🎉</div>
+    <div class="popup-title">You're on the list, <span id="popupName"></span>!</div>
+    <div class="popup-sub">We'll reach out as soon as AMA is ready for you.<br>Keep an eye on your inbox.</div>
+    <div class="popup-bar"><div class="popup-bar-fill" id="popupBar"></div></div>
+  </div>
+</div>
+
+<script>
+const form = document.querySelector('form[action*="formspree"]');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const data = new FormData(form);
+  const name = data.get('name') || 'you';
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      // Show popup with first name only
+      document.getElementById('popupName').textContent = name.split(' ')[0];
+      const overlay = document.getElementById('successPopup');
+      // Reset bar animation by re-inserting the element
+      const oldBar = document.getElementById('popupBar');
+      const newBar = oldBar.cloneNode(true);
+      oldBar.parentNode.replaceChild(newBar, oldBar);
+      overlay.classList.add('show');
+      // Clear form
+      form.reset();
+      // Hide after 5 seconds
+      setTimeout(() => overlay.classList.remove('show'), 5000);
+    }
+  } catch(err) {
+    console.error(err);
+  }
+});
+// Click overlay to dismiss early
+document.getElementById('successPopup').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('show');
+});
+</script>
 </body>
 </html>
