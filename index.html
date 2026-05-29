@@ -442,16 +442,18 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
       </div>
     </div>
     <div class="waitlist-form">
-      <div class="form-row">
-        <div class="form-group"><label>Full Name</label><input type="text" placeholder="Enter your name"></div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="Enter your email"></div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><label>Business Type</label><select><option value="">Select your business type</option><option>Skincare / Beauty</option><option>Fashion</option><option>Food &amp; Beverage</option><option>Fitness</option><option>Other</option></select></div>
-        <div class="form-group"><label>Instagram Handle</label><div class="handle-wrap"><span class="handle-at">@</span><input type="text" placeholder="yourusername"></div></div>
-      </div>
-      <button class="join-btn">Join the Waitlist</button>
-      <div class="no-spam">No spam. Only product updates.</div>
+      <form action="https://formspree.io/f/mgoqdbdj" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="Enter your email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Business Type</label><select name="business_type"><option value="">Select your business type</option><option>Skincare / Beauty</option><option>Fashion</option><option>Food &amp; Beverage</option><option>Fitness</option><option>Other</option></select></div>
+          <div class="form-group"><label>Instagram Handle</label><div class="handle-wrap"><span class="handle-at">@</span><input type="text" name="instagram_handle" placeholder="yourusername"></div></div>
+        </div>
+        <button type="submit" class="join-btn">Join the Waitlist</button>
+        <div class="no-spam">No spam. Only product updates.</div>
+      </form>
     </div>
   </div>
 </section>
