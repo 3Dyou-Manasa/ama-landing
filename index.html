@@ -69,6 +69,75 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .no-spam{text-align:center;font-size:12px;color:#9ca3af;margin-top:10px}
 footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:flex;align-items:center;justify-content:center}
 
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  /* Nav */
+  nav{padding:0 20px;height:56px}
+  .nav-links{display:none}
+  .nav-cta{padding:8px 14px;font-size:12px}
+  .nav-cta span{display:none}
+
+  /* Hero */
+  .hero-wrap{grid-template-columns:1fr;gap:32px;padding:36px 20px 48px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px;max-width:100%}
+  .hero-dark-card{height:auto;min-height:0}
+  .card-body{grid-template-columns:1fr}
+  .dsb{display:none}
+  .hero-btn{width:100%;justify-content:center;font-size:14px}
+
+  /* Audience section */
+  section[id="who"] > div > div:last-child{grid-template-columns:repeat(2,1fr) !important}
+  section[id="who"]{padding:48px 20px !important}
+  section[id="who"] > div > h2{font-size:24px !important}
+
+  /* How it works */
+  .how-section{padding:48px 20px}
+  .how-section h2{font-size:24px;margin-bottom:32px}
+  .how-steps{flex-direction:column;align-items:center;gap:0}
+  .how-step{width:100%;max-width:320px;display:flex;flex-direction:column;align-items:center;padding:16px 0}
+  .how-arrow{transform:rotate(90deg);padding:4px 0;font-size:20px}
+
+  /* Insights + Plan screens */
+  .screen-grid{grid-template-columns:1fr}
+  .dark-card{height:auto}
+  .card-body{grid-template-columns:1fr}
+  .dark-card .dsb{display:none}
+
+  /* Benefits section */
+  section[id="benefits"]{padding:48px 20px !important}
+  section[id="benefits"] > div > h2{font-size:24px !important}
+  section[id="benefits"] > div > div{grid-template-columns:1fr 1fr !important;gap:16px !important}
+
+  /* Waitlist */
+  .waitlist-section{padding:48px 20px}
+  .waitlist-inner{grid-template-columns:1fr;gap:40px}
+  .waitlist-left h2{font-size:24px}
+  .form-row{grid-template-columns:1fr}
+  .waitlist-form{padding:24px 20px}
+  .perks{flex-direction:column;align-items:center;gap:12px}
+
+  /* Dashboard content padding */
+  .hero-dark-card .card-body > div:last-child{padding:12px}
+
+  /* Footer */
+  footer{flex-direction:column;gap:16px;padding:24px 20px;text-align:center}
+}
+
+@media (max-width: 480px) {
+  /* Audience cards — 1 column on very small screens */
+  section[id="who"] > div > div:last-child{grid-template-columns:1fr 1fr !important}
+
+  /* Benefits — 1 column */
+  section[id="benefits"] > div > div{grid-template-columns:1fr !important}
+
+  /* Hero h1 */
+  .hero h1{font-size:26px}
+
+  /* Popup */
+  .popup-box{padding:28px 20px}
+}
+
 /* Success popup */
 .popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center}
 .popup-overlay.show{display:flex}
