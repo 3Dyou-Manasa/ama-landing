@@ -11,7 +11,8 @@
 body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden}
 
 /* NAV */
-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:100}
+html{scroll-behavior:smooth}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center}
 .nav-links{display:flex;gap:32px}
 .nav-links a{text-decoration:none;color:#374151;font-size:14px;font-weight:500;transition:color 0.2s}
@@ -25,9 +26,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .ama-logo-dark sup{font-size:7px;font-weight:500;color:#a78bfa;vertical-align:super;line-height:0}
 
 /* HERO */
-.hero-wrap{max-width:1296px;margin:0 auto;padding:72px 48px 88px;display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.hero-wrap{max-width:1200px;margin:0 auto;padding:80px 48px 96px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .hero-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase}
-.hero h1{font-size:48px;font-weight:900;line-height:1.12;color:#111827;margin-bottom:20px}
+.hero h1{font-size:46px;font-weight:900;line-height:1.15;color:#111827;margin-bottom:22px}
 .hero h1 span{color:#7c3aed}
 .hero h1 em{color:#ec4899;font-style:normal}
 .hero-sub{color:#6b7280;font-size:17px;line-height:1.7;margin-bottom:36px;max-width:420px}
@@ -55,39 +56,39 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .stat-sub{font-size:8px;margin-top:4px;line-height:1.4}
 
 /* HOW IT WORKS */
-.how-section{background:#f9fafb;padding:88px 48px;text-align:center}
+.how-section{background:#f9fafb;padding:96px 48px;text-align:center}
 .section-tag{display:inline-block;font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.section-h2{font-size:34px;font-weight:800;color:#111827;margin-bottom:14px;line-height:1.2}
-.section-sub{font-size:16px;color:#6b7280;max-width:540px;margin:0 auto 52px;line-height:1.6}
+.section-h2{font-size:36px;font-weight:800;color:#111827;margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:17px;color:#6b7280;max-width:560px;margin:0 auto 56px;line-height:1.7}
 .how-steps{display:flex;align-items:flex-start;justify-content:center;max-width:1100px;margin:0 auto}
-.how-step{flex:1;text-align:center;padding:0 8px}
+.how-step{flex:1;text-align:center;padding:0 10px}
 .how-icon{width:70px;height:70px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;border-radius:18px}
-.how-step h4{font-size:14px;font-weight:700;color:#111827;margin-bottom:6px}
-.how-step p{font-size:12px;color:#6b7280;line-height:1.6}
-.how-step .step-num{font-size:11px;font-weight:700;color:#7c3aed;margin-bottom:8px;display:block}
+.how-step h4{font-size:14px;font-weight:700;color:#111827;margin-bottom:8px}
+.how-step p{font-size:12.5px;color:#6b7280;line-height:1.65}
+.how-step .step-num{font-size:10px;font-weight:700;color:#7c3aed;margin-bottom:10px;display:block;letter-spacing:1px}
 .how-arrow{display:flex;align-items:flex-start;padding-top:26px;color:#d1d5db;font-size:22px;flex-shrink:0}
 
 /* SCREENS GRID */
-.screens-section{background:#fff;padding:88px 48px}
+.screens-section{background:#fff;padding:96px 48px}
 .screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1200px;margin:0 auto}
 .screen-label{font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
 
 /* WHO ITS FOR */
-.for-section{background:#fff;padding:88px 48px}
+.for-section{background:#fff;padding:96px 48px}
 .creator-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1100px;margin:0 auto}
-.creator-card{border-radius:18px;overflow:hidden;text-align:center;padding-bottom:18px;border:1px solid transparent;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
+.creator-card{border-radius:18px;overflow:hidden;text-align:center;padding-bottom:20px;border:1px solid transparent;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
 .creator-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
-.creator-emoji-wrap{height:110px;display:flex;align-items:center;justify-content:center;font-size:52px;margin-bottom:14px}
-.creator-title{font-size:14px;font-weight:700;color:#111827;margin-bottom:5px;padding:0 12px}
-.creator-desc{font-size:12px;color:#6b7280;line-height:1.45;padding:0 14px}
+.creator-emoji-wrap{height:120px;display:flex;align-items:center;justify-content:center;font-size:56px;margin-bottom:16px}
+.creator-title{font-size:15px;font-weight:700;color:#111827;margin-bottom:6px;padding:0 14px}
+.creator-desc{font-size:12.5px;color:#6b7280;line-height:1.5;padding:0 16px}
 
 /* PAIN POINT */
-.pain-section{background:#0a0015;padding:88px 48px;text-align:center}
+.pain-section{background:#0a0015;padding:96px 48px;text-align:center}
 .pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:860px;margin:0 auto 44px}
-.pain-card{background:#1a1730;border-radius:16px;padding:28px 24px;text-align:left;border:1px solid rgba(255,255,255,0.07)}
+.pain-card{background:#1a1730;border-radius:16px;padding:32px 28px;text-align:left;border:1px solid rgba(255,255,255,0.07)}
 .pain-icon{font-size:32px;margin-bottom:14px}
-.pain-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
-.pain-text{font-size:13px;color:#9ca3af;line-height:1.65}
+.pain-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
+.pain-text{font-size:13.5px;color:#9ca3af;line-height:1.7}
 
 /* INSIGHTS MOCKUP */
 .insight-stat-row{display:flex;flex-direction:column;justify-content:space-between;gap:10px;flex:1}
@@ -95,23 +96,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .insight-row:last-child{border-bottom:none}
 
 /* WHAT YOU GET */
-.get-section{background:#f9fafb;padding:88px 48px}
+.get-section{background:#f9fafb;padding:96px 48px}
 .get-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1000px;margin:0 auto}
-.get-card{background:#fff;border-radius:18px;padding:30px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s}
+.get-card{background:#fff;border-radius:18px;padding:36px 28px;border:1px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s}
 .get-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
-.get-icon{font-size:34px;margin-bottom:18px}
-.get-title{font-size:16px;font-weight:700;color:#111827;margin-bottom:10px}
-.get-text{font-size:13px;color:#6b7280;line-height:1.65}
+.get-icon{font-size:36px;margin-bottom:20px}
+.get-title{font-size:17px;font-weight:700;color:#111827;margin-bottom:12px}
+.get-text{font-size:13.5px;color:#6b7280;line-height:1.7}
 
 /* WAITLIST */
-.waitlist-section{background:#fff;padding:88px 48px}
-.waitlist-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.waitlist-section{background:#fff;padding:96px 48px}
+.waitlist-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .waitlist-left{text-align:center}
 .launch-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
-.waitlist-left h2{font-size:32px;font-weight:800;color:#111827;margin-bottom:10px}
+.waitlist-left h2{font-size:34px;font-weight:800;color:#111827;margin-bottom:12px}
 .waitlist-left .sub{font-size:16px;color:#7c3aed;font-weight:600;margin-bottom:32px}
-.perks{display:flex;flex-direction:column;gap:14px;text-align:left;max-width:300px;margin:0 auto}
-.perk{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#374151}
+.perks{display:flex;flex-direction:column;gap:18px;text-align:left;max-width:320px;margin:0 auto}
+.perk{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#374151;line-height:1.5}
 .perk-icon{font-size:18px;flex-shrink:0;margin-top:1px}
 .waitlist-form{background:#fff;border-radius:20px;padding:36px;box-shadow:0 4px 30px rgba(0,0,0,0.1);border:1px solid #e5e7eb}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
@@ -150,7 +151,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
 @keyframes drain{from{width:100%}to{width:0%}}
 
 /* MOBILE */
-@media(max-width:768px){
+@media(max-width:900px){
   nav{padding:0 20px;height:56px}
   .nav-links{display:none}
   .nav-cta{padding:8px 14px;font-size:12px}
@@ -235,10 +236,9 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
       <div class="dsb">
         <div class="dsb-logo"><span class="ama-logo-dark">ama<sup>ai</sup></span></div>
         <div class="dsb-item on"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>My Insights</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>This Week's Plan</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Generate Content</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Competitors</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Growth Insights</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Weekly Plan</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Peer Compare</div>
         <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Content Calendar</div>
         <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
         <div class="dsb-user">
@@ -459,8 +459,8 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
       </div>
       <div class="get-card">
         <div class="get-icon">&#128269;</div>
-        <div class="get-title">Competitor Analysis</div>
-        <div class="get-text">See how similar creators in your niche are outperforming you — and what specific content formats and topics you should be posting that you're not.</div>
+        <div class="get-title">Peer Compare</div>
+        <div class="get-text">See how similar creators in your niche are performing — what they're posting, what's working for them, and what you should be doing differently.</div>
       </div>
     </div>
   </div>
@@ -481,7 +481,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
       <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
         <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
         <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Saves &amp; Reach Per Post</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.5;"><strong style="color:#9ca3af;">Saves</strong> show what your audience found genuinely valuable. <strong style="color:#9ca3af;">Reach</strong> shows how far the algorithm pushed it.</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.5;"><strong style="color:#9ca3af;">Saves</strong> show what your audience found genuinely valuable. <strong style="color:#9ca3af;">Reach</strong> shows how far the algorithm pushed it. Two very different signals.</div>
       </div>
       <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
         <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
