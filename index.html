@@ -201,14 +201,32 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
   .get-grid{grid-template-columns:1fr}
   .creator-grid{grid-template-columns:repeat(2,1fr)}
   .popup-box{padding:28px 20px}
-  .card-body{grid-template-columns:88px 1fr}
-  .dsb-item{font-size:7.5px;padding:5px 8px}
-
-  /* Coming in Pro — 1 col on very small */
   .pro-grid{grid-template-columns:1fr !important}
-
-  /* Saves & Reach card text overflow fix */
   .pro-grid div strong{display:inline}
+}
+
+/* Dashboard card mobile fix — target all screen sizes below 600px */
+@media(max-width:600px){
+  /* Hide sidebar on mobile to give content more room */
+  .hero-dark-card .dsb{display:none}
+  .hero-dark-card .card-body{grid-template-columns:1fr}
+  .hero-dark-card .card-topbar{padding:8px 12px}
+
+  /* Stat grids inside dashboard — 2 cols on mobile */
+  .hero-dark-card .stat-grid-3{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    margin-bottom:6px;
+  }
+  .hero-dark-card .stat-card{padding:10px 10px}
+  .hero-dark-card .stat-val{font-size:15px}
+  .hero-dark-card .stat-label{font-size:7.5px}
+  .hero-dark-card .stat-sub{font-size:7.5px}
+
+  /* Recommendation card */
+  .hero-dark-card .rec-card{padding:10px}
+  .hero-dark-card .rec-text{font-size:11px;line-height:1.5}
 }
 </style>
 </head>
@@ -281,7 +299,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
           <div style="font-size:8.5px;color:#9ca3af;">Here's what AMA found about your Instagram this week</div>
         </div>
         <!-- 3 stat cards row 1 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+        <div class="stat-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
           <div class="stat-card">
             <div class="stat-label">Engagement Rate</div>
             <div class="stat-val">3.8%</div>
@@ -299,7 +317,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
           </div>
         </div>
         <!-- 3 stat cards row 2 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+        <div class="stat-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
           <div class="stat-card">
             <div class="stat-label" style="color:#8b5cf6;font-weight:700;">Best Time to Post</div>
             <div class="stat-val" style="font-size:13px;">Tue &amp; Fri 8PM</div>
@@ -317,11 +335,11 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
           </div>
         </div>
         <!-- AMA recommendation -->
-        <div class="stat-card" style="display:flex;gap:8px;align-items:flex-start;">
+        <div class="stat-card rec-card" style="display:flex;gap:8px;align-items:flex-start;">
           <div style="width:22px;height:22px;background:rgba(124,58,237,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;">&#128161;</div>
           <div>
             <div style="font-size:8.5px;color:#8b5cf6;font-weight:700;margin-bottom:3px;">AMA's #1 Recommendation This Week</div>
-            <div style="font-size:8.5px;color:#9ca3af;line-height:1.55;">Short video Reels are getting 4x more reach in your niche right now. You're only posting 3 Reels a week — bump it to 5 and post on Tuesday 8PM, Thursday 7PM &amp; Saturday 6PM.</div>
+            <div class="rec-text" style="font-size:8.5px;color:#9ca3af;line-height:1.55;">Short video Reels are getting 4x more reach in your niche right now. You're only posting 3 Reels a week — bump it to 5 and post on Tuesday 8PM, Thursday 7PM &amp; Saturday 6PM.</div>
           </div>
         </div>
       </div>
