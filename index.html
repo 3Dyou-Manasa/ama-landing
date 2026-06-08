@@ -42,7 +42,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 
 /* DARK CARD SYSTEM */
 .dark-card{background:#0f0d1a;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column}
-.hero-dark-card{background:#0f0d1a;border-radius:20px;overflow:hidden;color:#fff;box-shadow:0 30px 80px rgba(0,0,0,0.4);display:flex;flex-direction:column;height:500px}
+.hero-dark-card{background:#0f0d1a;border-radius:20px;overflow:hidden;color:#fff;box-shadow:0 30px 80px rgba(0,0,0,0.4);display:flex;flex-direction:column}
 .card-topbar{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:8px;flex-shrink:0}
 .card-body{display:grid;grid-template-columns:120px 1fr;flex:1;min-height:0}
 .dsb{background:#15122b;padding:8px 0;display:flex;flex-direction:column}
@@ -155,31 +155,60 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
   nav{padding:0 20px;height:56px}
   .nav-links{display:none}
   .nav-cta{padding:8px 14px;font-size:12px}
-  .hero-wrap{grid-template-columns:1fr;gap:36px;padding:40px 20px 52px}
-  .hero h1{font-size:32px}
+
+  /* Hero — stack, show dashboard below text */
+  .hero-wrap{grid-template-columns:1fr;gap:32px;padding:40px 20px 48px}
+  .hero h1{font-size:30px}
   .hero-sub{font-size:15px;max-width:100%}
-  .hero-dark-card{display:none}
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-outline{width:100%;justify-content:center}
-  .pain-section,.how-section,.for-section,.screens-section,.get-section,.waitlist-section{padding:52px 20px}
+
+  /* Dashboard card on mobile — show it, scaled to fit */
+  .hero-dark-card{display:flex;border-radius:14px;overflow:hidden}
+  .card-topbar{padding:9px 12px}
+  .card-body{grid-template-columns:100px 1fr}
+  .dsb{padding:6px 0}
+  .dsb-logo{padding:8px 10px}
+  .dsb-item{padding:6px 10px;font-size:8.5px;gap:5px}
+  .dsb-user{padding:8px 10px;gap:5px}
+  .stat-card{padding:9px}
+  .stat-val{font-size:14px}
+  .stat-label{font-size:7.5px}
+  .stat-sub{font-size:7px}
+
+  /* Sections */
+  .pain-section,.how-section,.for-section,.get-section,.waitlist-section{padding:52px 20px}
   .pain-cards{grid-template-columns:1fr;gap:14px}
   .how-steps{flex-direction:column;align-items:center}
   .how-step{width:100%;max-width:300px;padding:12px 0}
   .how-arrow{transform:rotate(90deg);padding:2px 0}
   .creator-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .screen-grid{grid-template-columns:1fr;gap:20px}
   .get-grid{grid-template-columns:1fr 1fr;gap:16px}
   .waitlist-inner{grid-template-columns:1fr;gap:40px}
   .form-row{grid-template-columns:1fr}
   .waitlist-form{padding:24px 18px}
   footer{flex-direction:column;gap:16px;padding:24px 20px;text-align:center}
-  .section-h2{font-size:26px}
+  .section-h2{font-size:26px;line-height:1.25}
+
+  /* Coming in Pro section */
+  section[id="coming-pro"] .pro-grid,
+  .pro-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}
 }
+
 @media(max-width:480px){
-  .hero h1{font-size:27px}
+  .hero h1{font-size:26px}
+  .hero-sub{font-size:14px}
   .get-grid{grid-template-columns:1fr}
   .creator-grid{grid-template-columns:repeat(2,1fr)}
   .popup-box{padding:28px 20px}
+  .card-body{grid-template-columns:88px 1fr}
+  .dsb-item{font-size:7.5px;padding:5px 8px}
+
+  /* Coming in Pro — 1 col on very small */
+  .pro-grid{grid-template-columns:1fr !important}
+
+  /* Saves & Reach card text overflow fix */
+  .pro-grid div strong{display:inline}
 }
 </style>
 </head>
@@ -471,7 +500,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
     <span class="section-tag" style="color:#a78bfa;">Coming in Pro</span>
     <h2 class="section-h2" style="color:#fff;margin-bottom:14px;">Even deeper intelligence — unlocking soon</h2>
     <p style="font-size:15px;color:#6b7280;margin-bottom:40px;line-height:1.7;">Connect your Instagram account to unlock the metrics that matter most for brand deals and serious growth.</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;">
+    <div class="pro-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;">
       <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
         <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
         <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Follower Demographics</div>
@@ -480,7 +509,7 @@ footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;just
       <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
         <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
         <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Saves &amp; Reach Per Post</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.5;"><strong style="color:#9ca3af;">Saves</strong> show what your audience found genuinely valuable. <strong style="color:#9ca3af;">Reach</strong> shows how far the algorithm pushed it. Two very different signals.</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.6;">Saves = content your audience found genuinely valuable. Reach = how far the algorithm pushed it. Two very different signals.</div>
       </div>
       <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
         <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
