@@ -4,151 +4,182 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='10' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white'%3Ea%3C/text%3E%3Ctext x='22' y='16' font-family='Arial' font-size='8' font-weight='500' fill='%23f9a8d4'%3Eai%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMA – AI Marketing Assistant</title>
+<title>AMA – AI Growth Assistant for Creators</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden}
+
+/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo{display:flex;align-items:center}
 .nav-links{display:flex;gap:32px}
-.nav-links a{text-decoration:none;color:#374151;font-size:14px;font-weight:500}
-.nav-cta{background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
-.ama-logo-nav{font-family:Arial,sans-serif;font-size:22px;font-weight:700;color:#7c3aed;letter-spacing:0.5px;line-height:1}
-.ama-logo-nav sup{font-size:10px;font-weight:500;color:#ec4899;vertical-align:super;line-height:0}
+.nav-links a{text-decoration:none;color:#374151;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#7c3aed}
+.nav-cta{background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+
+/* LOGO */
+.ama-logo-nav{font-family:Arial,sans-serif;font-size:24px;font-weight:700;color:#7c3aed;letter-spacing:0.5px;line-height:1}
+.ama-logo-nav sup{font-size:11px;font-weight:500;color:#ec4899;vertical-align:super;line-height:0}
 .ama-logo-dark{font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#fff;letter-spacing:0.5px;line-height:1}
 .ama-logo-dark sup{font-size:7px;font-weight:500;color:#a78bfa;vertical-align:super;line-height:0}
-.hero-wrap{max-width:1296px;margin:0 auto;padding:60px 48px 80px;display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:stretch}
-.hero-text{align-self:center}
-.hero-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
-.hero h1{font-size:46px;font-weight:800;line-height:1.15;color:#111827;margin-bottom:16px}
+
+/* HERO */
+.hero-wrap{max-width:1296px;margin:0 auto;padding:72px 48px 88px;display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.hero-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase}
+.hero h1{font-size:48px;font-weight:900;line-height:1.12;color:#111827;margin-bottom:20px}
 .hero h1 span{color:#7c3aed}
-.hero p{color:#6b7280;font-size:16px;line-height:1.6;margin-bottom:32px;max-width:380px}
-.hero-btn{background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;border:none;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;margin-bottom:12px}
-.hero-free{font-size:13px;color:#9ca3af;margin-bottom:28px}
-.hero-coming{font-size:13px;color:#374151;font-weight:500;margin-bottom:10px}
-.hero-channels{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.channel-pill{display:flex;align-items:center;gap:6px;background:#f3f4f6;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;color:#374151}
-.coming-pill{background:#f9fafb;color:#9ca3af;border:1px solid #e5e7eb}
-.dark-card{background:#0f0d1a;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column;height:420px}
-.hero-dark-card{background:#0f0d1a;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column;height:420px;box-shadow:0 25px 60px rgba(0,0,0,0.35)}
-.card-topbar{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hero h1 em{color:#ec4899;font-style:normal}
+.hero-sub{color:#6b7280;font-size:17px;line-height:1.7;margin-bottom:36px;max-width:420px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.btn-primary{background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;border:none;padding:15px 32px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.btn-outline{display:inline-flex;align-items:center;padding:15px 32px;border-radius:10px;font-size:15px;font-weight:700;border:2px solid #7c3aed;color:#7c3aed;text-decoration:none;background:#fff}
+.hero-note{font-size:13px;color:#9ca3af;margin-bottom:32px}
+.platform-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.platform-pill{display:flex;align-items:center;gap:6px;background:#f3f4f6;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;color:#374151}
+.platform-coming{background:#f9fafb;color:#9ca3af;border:1px solid #e5e7eb;font-size:11px}
+
+/* DARK CARD SYSTEM */
+.dark-card{background:#0f0d1a;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column}
+.hero-dark-card{background:#0f0d1a;border-radius:20px;overflow:hidden;color:#fff;box-shadow:0 30px 80px rgba(0,0,0,0.4)}
+.card-topbar{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:8px;flex-shrink:0}
 .card-body{display:grid;grid-template-columns:120px 1fr;flex:1;overflow:hidden}
 .dsb{background:#15122b;padding:8px 0;display:flex;flex-direction:column}
-.dsb-logo{padding:9px 12px;display:flex;align-items:center;gap:5px}
-.dsb-item{display:flex;align-items:center;gap:5px;padding:7px 12px;font-size:9.5px;color:#6b7280;cursor:pointer}
+.dsb-logo{padding:10px 13px;display:flex;align-items:center}
+.dsb-item{display:flex;align-items:center;gap:6px;padding:8px 13px;font-size:9.5px;color:#6b7280;cursor:pointer;transition:all 0.2s}
 .dsb-item.on{color:#8b5cf6;background:rgba(124,58,237,0.15);border-right:2px solid #7c3aed}
-.dsb-user{margin-top:auto;padding:9px 12px;display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,0.06)}
-.how-section{background:#f9fafb;padding:80px 48px;text-align:center}
-.how-section h2{font-size:30px;font-weight:700;color:#111827;margin-bottom:48px}
+.dsb-user{margin-top:auto;padding:10px 13px;display:flex;align-items:center;gap:7px;border-top:1px solid rgba(255,255,255,0.06)}
+.stat-card{background:#1a1730;border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.07)}
+.stat-label{font-size:8px;color:#9ca3af;margin-bottom:4px;font-weight:500}
+.stat-val{font-size:17px;font-weight:700;color:#fff;line-height:1.1}
+.stat-sub{font-size:8px;margin-top:4px;line-height:1.4}
+
+/* HOW IT WORKS */
+.how-section{background:#f9fafb;padding:88px 48px;text-align:center}
+.section-tag{display:inline-block;font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.section-h2{font-size:34px;font-weight:800;color:#111827;margin-bottom:14px;line-height:1.2}
+.section-sub{font-size:16px;color:#6b7280;max-width:540px;margin:0 auto 52px;line-height:1.6}
 .how-steps{display:flex;align-items:flex-start;justify-content:center;max-width:1100px;margin:0 auto}
-.how-step{flex:1;text-align:center;padding:0 6px}
-.how-icon{width:66px;height:66px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
-.how-step h4{font-size:13px;font-weight:700;color:#111827;margin-bottom:6px}
-.how-step p{font-size:12px;color:#6b7280;line-height:1.5}
-.how-arrow{display:flex;align-items:center;padding-top:18px;color:#9ca3af;font-size:18px;flex-shrink:0}
-.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-.waitlist-section{background:#f9fafb;padding:80px 48px}
+.how-step{flex:1;text-align:center;padding:0 8px}
+.how-icon{width:70px;height:70px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;border-radius:18px}
+.how-step h4{font-size:14px;font-weight:700;color:#111827;margin-bottom:6px}
+.how-step p{font-size:12px;color:#6b7280;line-height:1.6}
+.how-step .step-num{font-size:11px;font-weight:700;color:#7c3aed;margin-bottom:8px;display:block}
+.how-arrow{display:flex;align-items:flex-start;padding-top:26px;color:#d1d5db;font-size:22px;flex-shrink:0}
+
+/* SCREENS GRID */
+.screens-section{background:#fff;padding:88px 48px}
+.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1200px;margin:0 auto}
+.screen-label{font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+
+/* WHO ITS FOR */
+.for-section{background:#fff;padding:88px 48px}
+.creator-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.creator-card{border-radius:18px;overflow:hidden;text-align:center;padding-bottom:18px;border:1px solid transparent;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
+.creator-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
+.creator-emoji-wrap{height:110px;display:flex;align-items:center;justify-content:center;font-size:52px;margin-bottom:14px}
+.creator-title{font-size:14px;font-weight:700;color:#111827;margin-bottom:5px;padding:0 12px}
+.creator-desc{font-size:12px;color:#6b7280;line-height:1.45;padding:0 14px}
+
+/* PAIN POINT */
+.pain-section{background:#0a0015;padding:88px 48px;text-align:center}
+.pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:860px;margin:0 auto 44px}
+.pain-card{background:#1a1730;border-radius:16px;padding:28px 24px;text-align:left;border:1px solid rgba(255,255,255,0.07)}
+.pain-icon{font-size:32px;margin-bottom:14px}
+.pain-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.pain-text{font-size:13px;color:#9ca3af;line-height:1.65}
+
+/* INSIGHTS MOCKUP */
+.insight-stat-row{display:flex;flex-direction:column;justify-content:space-between;gap:10px;flex:1}
+.insight-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.insight-row:last-child{border-bottom:none}
+
+/* WHAT YOU GET */
+.get-section{background:#f9fafb;padding:88px 48px}
+.get-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.get-card{background:#fff;border-radius:18px;padding:30px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s}
+.get-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
+.get-icon{font-size:34px;margin-bottom:18px}
+.get-title{font-size:16px;font-weight:700;color:#111827;margin-bottom:10px}
+.get-text{font-size:13px;color:#6b7280;line-height:1.65}
+
+/* WAITLIST */
+.waitlist-section{background:#fff;padding:88px 48px}
 .waitlist-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .waitlist-left{text-align:center}
-.launch-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
-.waitlist-left h2{font-size:30px;font-weight:800;color:#111827;margin-bottom:8px}
-.waitlist-left .sub{font-size:16px;color:#7c3aed;font-weight:600;margin-bottom:28px}
-.perks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.perk{display:flex;align-items:center;gap:6px;font-size:12px;color:#374151;font-weight:500}
-.waitlist-form{background:#fff;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.launch-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+.waitlist-left h2{font-size:32px;font-weight:800;color:#111827;margin-bottom:10px}
+.waitlist-left .sub{font-size:16px;color:#7c3aed;font-weight:600;margin-bottom:32px}
+.perks{display:flex;flex-direction:column;gap:14px;text-align:left;max-width:300px;margin:0 auto}
+.perk{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#374151}
+.perk-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.waitlist-form{background:#fff;border-radius:20px;padding:36px;box-shadow:0 4px 30px rgba(0,0,0,0.1);border:1px solid #e5e7eb}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.form-group{display:flex;flex-direction:column;gap:6px}
-.form-group label{font-size:12px;font-weight:600;color:#374151}
-.form-group input,.form-group select{border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:14px;color:#374151;background:#fff;outline:none;font-family:inherit}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-group label{font-size:12px;font-weight:700;color:#374151;letter-spacing:0.3px}
+.form-group input,.form-group select{border:1.5px solid #e5e7eb;border-radius:10px;padding:12px 14px;font-size:14px;color:#374151;background:#fff;outline:none;font-family:inherit;transition:border-color 0.2s}
+.form-group input:focus,.form-group select:focus{border-color:#7c3aed}
 .form-group input::placeholder{color:#9ca3af}
 .handle-wrap{position:relative}
-.handle-at{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:14px}
-.handle-wrap input{padding-left:26px}
-.join-btn{width:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
-.no-spam{text-align:center;font-size:12px;color:#9ca3af;margin-top:10px}
-footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:flex;align-items:center;justify-content:center}
+.handle-at{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:14px}
+.handle-wrap input{padding-left:28px}
+.join-btn{width:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:16px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:opacity 0.2s}
+.join-btn:hover{opacity:0.92}
+.no-spam{text-align:center;font-size:12px;color:#9ca3af;margin-top:12px}
 
-/* ── MOBILE RESPONSIVE ── */
-@media (max-width: 768px) {
-  /* Nav */
+/* FOOTER */
+footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:Arial,sans-serif;font-size:20px;font-weight:700;color:#fff}
+.footer-logo sup{font-size:9px;font-weight:500;color:#a78bfa;vertical-align:super;line-height:0}
+.footer-text{font-size:13px;color:#6b7280}
+.footer-ig{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center}
+.popup-overlay.show{display:flex}
+.popup-box{background:#fff;border-radius:24px;padding:44px 48px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.2);max-width:440px;width:90%;animation:popIn 0.3s ease}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.popup-icon{font-size:52px;margin-bottom:18px}
+.popup-title{font-size:24px;font-weight:800;color:#111827;margin-bottom:10px}
+.popup-sub{font-size:15px;color:#6b7280;line-height:1.65;margin-bottom:20px}
+.popup-box-inner{background:#f9fafb;border-radius:12px;padding:16px 18px;margin-bottom:20px;text-align:left}
+.popup-box-inner p{font-size:13px;font-weight:600;color:#374151;margin-bottom:10px}
+.popup-ig-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:11px 22px;border-radius:9px;font-size:13px;font-weight:700}
+.popup-bar{height:4px;background:#e5e7eb;border-radius:2px;margin-top:20px;overflow:hidden}
+.popup-bar-fill{height:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);border-radius:2px;animation:drain 5s linear forwards}
+@keyframes drain{from{width:100%}to{width:0%}}
+
+/* MOBILE */
+@media(max-width:768px){
   nav{padding:0 20px;height:56px}
   .nav-links{display:none}
   .nav-cta{padding:8px 14px;font-size:12px}
-  .nav-cta span{display:none}
-
-  /* Hero */
-  .hero-wrap{grid-template-columns:1fr;gap:32px;padding:36px 20px 48px}
-  .hero h1{font-size:30px}
-  .hero p{font-size:15px;max-width:100%}
-  .hero-dark-card{height:auto;min-height:0}
-  .card-body{grid-template-columns:1fr}
-  .dsb{display:none}
-  .hero-btn{width:100%;justify-content:center;font-size:14px}
-
-  /* Audience section */
-  section[id="who"] > div > div:last-child{grid-template-columns:repeat(2,1fr) !important}
-  section[id="who"]{padding:48px 20px !important}
-  section[id="who"] > div > h2{font-size:24px !important}
-
-  /* How it works */
-  .how-section{padding:48px 20px}
-  .how-section h2{font-size:24px;margin-bottom:32px}
-  .how-steps{flex-direction:column;align-items:center;gap:0}
-  .how-step{width:100%;max-width:320px;display:flex;flex-direction:column;align-items:center;padding:16px 0}
-  .how-arrow{transform:rotate(90deg);padding:4px 0;font-size:20px}
-
-  /* Insights + Plan screens */
-  .screen-grid{grid-template-columns:1fr}
-  .dark-card{height:auto}
-  .card-body{grid-template-columns:1fr}
-  .dark-card .dsb{display:none}
-
-  /* Benefits section */
-  section[id="benefits"]{padding:48px 20px !important}
-  section[id="benefits"] > div > h2{font-size:24px !important}
-  section[id="benefits"] > div > div{grid-template-columns:1fr 1fr !important;gap:16px !important}
-
-  /* Waitlist */
-  .waitlist-section{padding:48px 20px}
+  .hero-wrap{grid-template-columns:1fr;gap:36px;padding:40px 20px 52px}
+  .hero h1{font-size:32px}
+  .hero-sub{font-size:15px;max-width:100%}
+  .hero-dark-card{display:none}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
+  .pain-section,.how-section,.for-section,.screens-section,.get-section,.waitlist-section{padding:52px 20px}
+  .pain-cards{grid-template-columns:1fr;gap:14px}
+  .how-steps{flex-direction:column;align-items:center}
+  .how-step{width:100%;max-width:300px;padding:12px 0}
+  .how-arrow{transform:rotate(90deg);padding:2px 0}
+  .creator-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .screen-grid{grid-template-columns:1fr;gap:20px}
+  .get-grid{grid-template-columns:1fr 1fr;gap:16px}
   .waitlist-inner{grid-template-columns:1fr;gap:40px}
-  .waitlist-left h2{font-size:24px}
   .form-row{grid-template-columns:1fr}
-  .waitlist-form{padding:24px 20px}
-  .perks{flex-direction:column;align-items:center;gap:12px}
-
-  /* Dashboard content padding */
-  .hero-dark-card .card-body > div:last-child{padding:12px}
-
-  /* Footer */
+  .waitlist-form{padding:24px 18px}
   footer{flex-direction:column;gap:16px;padding:24px 20px;text-align:center}
+  .section-h2{font-size:26px}
 }
-
-@media (max-width: 480px) {
-  /* Audience cards — 1 column on very small screens */
-  section[id="who"] > div > div:last-child{grid-template-columns:1fr 1fr !important}
-
-  /* Benefits — 1 column */
-  section[id="benefits"] > div > div{grid-template-columns:1fr !important}
-
-  /* Hero h1 */
-  .hero h1{font-size:26px}
-
-  /* Popup */
+@media(max-width:480px){
+  .hero h1{font-size:27px}
+  .get-grid{grid-template-columns:1fr}
+  .creator-grid{grid-template-columns:repeat(2,1fr)}
   .popup-box{padding:28px 20px}
 }
-
-/* Success popup */
-.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center}
-.popup-overlay.show{display:flex}
-.popup-box{background:#fff;border-radius:20px;padding:40px 48px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);max-width:420px;width:90%;animation:popIn 0.3s ease}
-@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
-.popup-icon{font-size:48px;margin-bottom:16px}
-.popup-title{font-size:22px;font-weight:800;color:#111827;margin-bottom:8px}
-.popup-sub{font-size:15px;color:#6b7280;line-height:1.6}
-.popup-bar{height:4px;background:#e5e7eb;border-radius:2px;margin-top:24px;overflow:hidden}
-.popup-bar-fill{height:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);border-radius:2px;animation:drain 5s linear forwards}
-@keyframes drain{from{width:100%}to{width:0%}}
 </style>
 </head>
 <body>
@@ -159,104 +190,110 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
     <span class="ama-logo-nav">ama<sup>ai</sup></span>
   </div>
   <div class="nav-links">
-    <a href="#who">Who it's For</a><a href="#how">How it Works</a><a href="#benefits">What You Get</a><a href="#waitlist">Join Waitlist</a>
+    <a href="#who">Who it's For</a>
+    <a href="#how">How it Works</a>
+    <a href="#benefits">What You Get</a>
+    <a href="#waitlist">Join Waitlist</a>
   </div>
-  <a href="#waitlist" class="nav-cta" style="text-decoration:none;">
-    Join Early Access
-  </a>
+  <a href="#waitlist" class="nav-cta">Join Early Access</a>
 </nav>
 
 <!-- HERO -->
 <section>
 <div class="hero-wrap">
   <div class="hero hero-text">
-    <span class="hero-badge">AI Marketing Assistant</span>
-    <h1>AMA studies your Instagram and <span>plans your next week of content.</span></h1>
-    <p>Get smart insights, a personalized posting plan, and ready-to-post content that gets engagement.</p>
-    <div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px;">
-        <button class="hero-btn" style="margin-bottom:0;" onclick="alert('Demo coming soon — join early access to be notified!')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="white"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
-          Analyze My Instagram
-        </button>
-        <a href="#waitlist" style="display:inline-flex;align-items:center;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;border:2px solid #7c3aed;color:#7c3aed;text-decoration:none;background:#fff;">
-          Join Early Access
-        </a>
-      </div>
-      <div class="hero-free">Free to try &bull; No credit card</div>
+    <span class="hero-badge">AI Growth Assistant for Creators</span>
+    <h1>You're posting.<br>But you're <em>not growing.</em><br><span>AMA tells you why.</span></h1>
+    <p class="hero-sub">AMA studies your Instagram and gives you a clear, personalised plan — what to post, when to post it, and exactly what to say.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="alert('Demo coming soon — join early access to be notified when it\'s live!')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="white"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
+        Analyze My Instagram
+      </button>
+      <a href="#waitlist" class="btn-outline">Join Early Access</a>
     </div>
-    <div class="hero-coming">More channels coming soon:</div>
-    <div class="hero-channels">
-      <div class="channel-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</div>
-      <div class="channel-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</div>
-      <div class="channel-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="#374151"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email</div>
-      <div class="channel-pill coming-pill">Coming soon</div>
+    <div class="hero-note">Free audit &bull; No login required &bull; Results in 60 seconds</div>
+    <div style="font-size:13px;color:#374151;font-weight:500;margin-bottom:10px;">More platforms coming soon:</div>
+    <div class="platform-row">
+      <div class="platform-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" fill="#FF0000"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        YouTube
+      </div>
+      <div class="platform-pill platform-coming">LinkedIn &bull; Coming soon</div>
     </div>
   </div>
 
-  <!-- DASHBOARD MOCKUP -->
+  <!-- HERO DASHBOARD MOCKUP -->
   <div class="hero-dark-card">
+    <!-- topbar -->
     <div class="card-topbar">
       <span class="ama-logo-dark">ama<sup>ai</sup></span>
       <div style="margin-left:auto;font-size:9px;color:#6b7280;">Last updated: Today &nbsp;&#x21BB;</div>
     </div>
     <div class="card-body">
+      <!-- sidebar -->
       <div class="dsb">
         <div class="dsb-logo"><span class="ama-logo-dark">ama<sup>ai</sup></span></div>
         <div class="dsb-item on"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Insights</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Content Plan</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Generated Posts</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>My Insights</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>This Week's Plan</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Generate Content</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Competitors</div>
+        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Content Calendar</div>
         <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
         <div class="dsb-user">
-          <img src="https://i.pravatar.cc/100?img=47" width="24" height="24" style="border-radius:50%;flex-shrink:0;object-fit:cover;" alt="Glow Skin Clinic"/>
-          <div><div style="font-size:9px;color:#fff;font-weight:600;">Glow Skin Clinic</div><div style="font-size:8px;color:#6b7280;">@glowskin.clinic</div></div>
+          <img src="https://i.pravatar.cc/100?img=47" width="24" height="24" style="border-radius:50%;flex-shrink:0;object-fit:cover;" alt="creator"/>
+          <div><div style="font-size:9px;color:#fff;font-weight:600;">Priya Sharma</div><div style="font-size:8px;color:#6b7280;">@priyalifestyle &bull; 42.6K</div></div>
         </div>
       </div>
-      <!-- DASHBOARD CONTENT -->
-      <div style="padding:14px 14px 12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:2px;">Dashboard</div>
-        <div style="font-size:9px;color:#9ca3af;margin-bottom:10px;">Here's what AMA discovered about your Instagram</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;">
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#9ca3af;margin-bottom:3px;">Posting Frequency</div>
-            <div style="font-size:15px;font-weight:700;color:#fff;line-height:1.1;">1.2 <span style="font-size:9px;font-weight:500;color:#d1d5db;">posts / week</span></div>
-            <div style="font-size:8px;color:#9ca3af;margin-top:4px;line-height:1.4;">You're inconsistent.<br>Recommended: 3–4 posts / week</div>
+      <!-- dashboard content -->
+      <div style="padding:14px;overflow:hidden;display:flex;flex-direction:column;gap:8px;">
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:1px;">Dashboard</div>
+          <div style="font-size:8.5px;color:#9ca3af;">Here's what AMA found about your Instagram this week</div>
+        </div>
+        <!-- 3 stat cards row 1 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div class="stat-card">
+            <div class="stat-label">Engagement Rate</div>
+            <div class="stat-val">3.8%</div>
+            <div class="stat-sub" style="color:#10b981;">&#x2191; Above avg for 40K creators</div>
           </div>
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#9ca3af;margin-bottom:3px;">Engagement Rate</div>
-            <div style="font-size:18px;font-weight:700;color:#fff;line-height:1.1;">2.7%</div>
-            <div style="font-size:8px;color:#10b981;margin-top:4px;font-weight:600;">&#x2191; Good! Above avg in your industry</div>
+          <div class="stat-card">
+            <div class="stat-label">Best Content</div>
+            <div class="stat-val" style="font-size:13px;">Reels &#9733;</div>
+            <div class="stat-sub" style="color:#9ca3af;">4.2x more reach than photos</div>
           </div>
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#9ca3af;margin-bottom:3px;">Best Performing Content</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2;">Educational Posts &#9733;</div>
-            <div style="font-size:8px;color:#9ca3af;margin-top:4px;">Get 48% more engagement</div>
+          <div class="stat-card">
+            <div class="stat-label">Posting Consistency</div>
+            <div class="stat-val" style="font-size:13px;color:#f59e0b;">Inconsistent</div>
+            <div class="stat-sub" style="color:#9ca3af;">3 gaps &gt;5 days last month</div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;">
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#8b5cf6;font-weight:700;margin-bottom:3px;">Top Audience Active</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2;">7PM &#8211; 10PM &#128345;</div>
-            <div style="font-size:8px;color:#9ca3af;margin-top:4px;">Your audience is most active on weekends</div>
+        <!-- 3 stat cards row 2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div class="stat-card">
+            <div class="stat-label" style="color:#8b5cf6;font-weight:700;">Best Time to Post</div>
+            <div class="stat-val" style="font-size:13px;">Tue &amp; Fri 8PM</div>
+            <div class="stat-sub" style="color:#9ca3af;">Your audience peaks then</div>
           </div>
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#f59e0b;font-weight:700;margin-bottom:3px;">Content Opportunity</div>
-            <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2;">More Reels &#9654;</div>
-            <div style="font-size:8px;color:#9ca3af;margin-top:4px;">Reels can 2x your reach</div>
+          <div class="stat-card">
+            <div class="stat-label" style="color:#f59e0b;font-weight:700;">Hashtag Health</div>
+            <div class="stat-val" style="font-size:13px;color:#ef4444;">Too Broad</div>
+            <div class="stat-sub" style="color:#9ca3af;">Using 10M+ tags — switch to 50K–500K</div>
           </div>
-          <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:8px;color:#ef4444;font-weight:700;margin-bottom:3px;">Missed Opportunity &#9888;</div>
-            <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3;">You haven't posted in 6 days</div>
-            <div style="font-size:8px;color:#9ca3af;margin-top:4px;">Consistency is key!</div>
+          <div class="stat-card">
+            <div class="stat-label" style="color:#10b981;font-weight:700;">Growth Potential</div>
+            <div class="stat-val" style="font-size:13px;">+3,200/mo</div>
+            <div class="stat-sub" style="color:#9ca3af;">vs current +820/mo</div>
           </div>
         </div>
-        <div style="background:#1a1730;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.07);display:flex;gap:10px;align-items:flex-start;flex:1;">
-          <div style="width:24px;height:24px;background:rgba(124,58,237,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;">&#128161;</div>
+        <!-- AMA recommendation -->
+        <div class="stat-card" style="display:flex;gap:8px;align-items:flex-start;">
+          <div style="width:22px;height:22px;background:rgba(124,58,237,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;">&#128161;</div>
           <div>
-            <div style="font-size:9px;color:#8b5cf6;font-weight:700;margin-bottom:4px;">AMA Recommendation</div>
-            <div style="font-size:9px;color:#9ca3af;line-height:1.6;">You're doing great with skincare tips! Add more behind-the-scenes and transformation content to build more trust and conversions.</div>
+            <div style="font-size:8.5px;color:#8b5cf6;font-weight:700;margin-bottom:3px;">AMA's #1 Recommendation This Week</div>
+            <div style="font-size:8.5px;color:#9ca3af;line-height:1.55;">You're posting 70% photos but your Reels get 4x more reach. Post 3 Reels this week — Tuesday 8PM, Thursday 7PM, Saturday 6PM — and watch your reach jump.</div>
           </div>
         </div>
       </div>
@@ -265,380 +302,217 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 </div>
 </section>
 
-
 <!-- PAIN POINT -->
-<section style="background:#0f0d1a;padding:72px 48px;">
-  <div style="max-width:780px;margin:0 auto;text-align:center;">
-    <p style="font-size:13px;font-weight:700;color:#8b5cf6;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">The real problem</p>
-    <h2 style="font-size:32px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:32px;">Most businesses don't need more content.<br><span style="color:#a78bfa;">They need to know what's actually working.</span></h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;margin-bottom:40px;">
-      <div style="background:#1a1730;border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,0.07);">
-        <div style="font-size:28px;margin-bottom:12px;">🔍</div>
-        <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">What is working</div>
-        <div style="font-size:13px;color:#9ca3af;line-height:1.6;">Which posts actually drive follows, saves and enquiries — and why.</div>
+<section class="pain-section">
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="section-tag" style="color:#a78bfa;">The real problem</span>
+    <h2 class="section-h2" style="color:#fff;margin-bottom:16px;">Most creators don't need more content.<br><span style="color:#a78bfa;">They need to know what's actually working.</span></h2>
+    <p style="font-size:16px;color:#6b7280;margin-bottom:44px;line-height:1.7;">You're already putting in the work. The problem is you're flying blind — posting by gut feel with no idea what your audience actually responds to.</p>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-icon">&#128269;</div>
+        <div class="pain-title">What is working</div>
+        <div class="pain-text">Which posts drive followers, saves and DMs — and the exact pattern behind them that you can repeat.</div>
       </div>
-      <div style="background:#1a1730;border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,0.07);">
-        <div style="font-size:28px;margin-bottom:12px;">⚠️</div>
-        <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">What is missing</div>
-        <div style="font-size:13px;color:#9ca3af;line-height:1.6;">The content gaps your competitors are filling while your growth stalls.</div>
+      <div class="pain-card">
+        <div class="pain-icon">&#9888;&#65039;</div>
+        <div class="pain-title">What is missing</div>
+        <div class="pain-text">The content gaps your audience is hungry for — that similar creators are filling while your growth stalls.</div>
       </div>
-      <div style="background:#1a1730;border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,0.07);">
-        <div style="font-size:28px;margin-bottom:12px;">📅</div>
-        <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">What to post next</div>
-        <div style="font-size:13px;color:#9ca3af;line-height:1.6;">A clear, specific plan — not generic tips. Built for your audience.</div>
+      <div class="pain-card">
+        <div class="pain-icon">&#128197;</div>
+        <div class="pain-title">What to post next</div>
+        <div class="pain-text">Not generic tips. A specific, data-backed plan for your account, your niche, and your audience.</div>
       </div>
     </div>
-    <a href="#waitlist" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;">
-      Get My Instagram Audit →
+    <a href="#waitlist" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;text-decoration:none;padding:16px 36px;border-radius:12px;font-size:15px;font-weight:700;">
+      Get My Free Instagram Audit &#8594;
     </a>
   </div>
 </section>
 
-
-<!-- IF INSTAGRAM HELPS YOU GET CUSTOMERS -->
-<section id="who" style="background:#fff;padding:80px 48px;">
+<!-- WHO IT'S FOR -->
+<section class="for-section" id="who">
   <div style="max-width:1100px;margin:0 auto;text-align:center;">
-    <h2 style="font-size:34px;font-weight:800;color:#111827;margin-bottom:12px;">If Instagram helps you get customers,<br><span style="color:#7c3aed;">AMA is for you.</span></h2>
-    <p style="font-size:16px;color:#6b7280;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;">Built for businesses that need consistent content without hiring an agency.</p>
-    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;">
-
-      <!-- Salon -->
-      <div style="background:#fdf4ff;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #f3e8ff;">
-        <div style="height:100px;background:linear-gradient(135deg,#f3e8ff,#ede9fe);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">💇‍♀️</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Salon</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Show off transformations &amp; book more chairs</div>
+    <span class="section-tag">Who it's for</span>
+    <h2 class="section-h2">If you create content to grow an audience,<br><span style="color:#7c3aed;">AMA is built for you.</span></h2>
+    <p class="section-sub">Indian creators with 10,000–80,000 followers who are serious about growth and tired of guessing.</p>
+    <div class="creator-grid">
+      <div class="creator-card" style="background:#fdf4ff;border-color:#f3e8ff;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#f3e8ff,#ede9fe);">&#127947;&#65039;</div>
+        <div class="creator-title">Fitness Creator</div>
+        <div class="creator-desc">Grow beyond plateaus and turn followers into clients</div>
       </div>
-
-      <!-- Clinic -->
-      <div style="background:#f0fdf4;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #bbf7d0;">
-        <div style="height:100px;background:linear-gradient(135deg,#dcfce7,#bbf7d0);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🏥</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Clinic</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Build trust with patients before they walk in</div>
+      <div class="creator-card" style="background:#fff7ed;border-color:#fed7aa;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">&#127860;</div>
+        <div class="creator-title">Food Blogger</div>
+        <div class="creator-desc">Know which recipes go viral and why your audience saves them</div>
       </div>
-
-      <!-- Cafe -->
-      <div style="background:#fff7ed;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #fed7aa;">
-        <div style="height:100px;background:linear-gradient(135deg,#ffedd5,#fed7aa);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">☕</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Cafe</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Turn followers into daily regulars</div>
+      <div class="creator-card" style="background:#fdf2f8;border-color:#f9a8d4;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">&#128141;</div>
+        <div class="creator-title">Fashion Creator</div>
+        <div class="creator-desc">Unlock the content that attracts brand collabs and new followers</div>
       </div>
-
-      <!-- Events -->
-      <div style="background:#eff6ff;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #bfdbfe;">
-        <div style="height:100px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🎉</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Events</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Fill seats faster with the right content</div>
+      <div class="creator-card" style="background:#f0fdf4;border-color:#bbf7d0;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">&#128200;</div>
+        <div class="creator-title">Finance Creator</div>
+        <div class="creator-desc">Build authority and grow a loyal audience that trusts your advice</div>
       </div>
-
-      <!-- Photographer -->
-      <div style="background:#fefce8;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #fef08a;">
-        <div style="height:100px;background:linear-gradient(135deg,#fef9c3,#fef08a);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">📸</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Photographer</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Showcase your work &amp; attract dream clients</div>
+      <div class="creator-card" style="background:#fefce8;border-color:#fef08a;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#fef9c3,#fef08a);">&#127775;</div>
+        <div class="creator-title">Motivational Creator</div>
+        <div class="creator-desc">Find the hooks that resonate deeply and get shared widely</div>
       </div>
-
-      <!-- Coach -->
-      <div style="background:#fdf2f8;border-radius:16px;overflow:hidden;text-align:center;padding-bottom:16px;border:1px solid #f9a8d4;">
-        <div style="height:100px;background:linear-gradient(135deg,#fce7f3,#fbcfe8);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px;">🎯</div>
-        <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;padding:0 12px;">Coach</div>
-        <div style="font-size:12px;color:#6b7280;line-height:1.4;padding:0 12px;">Grow your authority and get more enquiries</div>
+      <div class="creator-card" style="background:#eff6ff;border-color:#bfdbfe;">
+        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">&#9968;&#65039;</div>
+        <div class="creator-title">Travel Creator</div>
+        <div class="creator-desc">Post at the right time with the right content to maximise reach</div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how">
-  <h2>How AMA works</h2>
+  <span class="section-tag">How it works</span>
+  <h2 class="section-h2">From your Instagram handle<br>to your weekly plan — in 60 seconds</h2>
+  <p class="section-sub">You do steps 1 and 5. AMA handles everything in between.</p>
   <div class="how-steps">
+
     <div class="how-step">
-      <div class="how-icon"><svg viewBox="0 0 48 48" width="62" height="62" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#ig1)"/><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="white" stroke-width="2.5"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="2.5"/><circle cx="32" cy="16" r="2" fill="white"/></svg></div>
-      <h4>1. Enter Instagram Handle</h4><p>You type in your handle — no login, no passwords, takes 10 seconds</p>
+      <div class="how-icon" style="background:#ede9fe;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#7c3aed" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#7c3aed" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#7c3aed"/></svg>
+      </div>
+      <span class="step-num">STEP 1 — YOU</span>
+      <h4>Enter Your Instagram Handle</h4>
+      <p>Type your handle. No login, no password, no permission needed. Takes 10 seconds.</p>
     </div>
+
     <div class="how-arrow">&#8594;</div>
+
     <div class="how-step">
-      <div class="how-icon"><div style="width:62px;height:62px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#10022;</div></div>
-      <h4>2. AMA Audits Your Profile</h4><p>We scan your posts, engagement patterns &amp; audience behaviour in depth</p>
+      <div class="how-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="step-num">STEP 2 — AMA</span>
+      <h4>We Audit Your Profile</h4>
+      <p>We scan your posts, reels, engagement patterns and compare you to similar creators in your niche.</p>
     </div>
+
     <div class="how-arrow">&#8594;</div>
+
     <div class="how-step">
-      <div class="how-icon"><div style="width:62px;height:62px;border:3px solid #7c3aed;border-radius:50%;display:flex;align-items:center;justify-content:center;"><div style="width:26px;height:26px;border:3px solid #7c3aed;border-radius:50%;"></div></div></div>
-      <h4>3. Discover What's Missing</h4><p>We surface the exact gaps hurting your growth — no guessing required</p>
+      <div class="how-icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="step-num">STEP 3 — AMA</span>
+      <h4>We Discover What's Missing</h4>
+      <p>We surface the exact gaps hurting your growth — inconsistency, wrong content type, timing, hashtags.</p>
     </div>
+
     <div class="how-arrow">&#8594;</div>
+
     <div class="how-step">
-      <div class="how-icon"><div style="width:62px;height:62px;background:#ede9fe;border-radius:14px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div></div>
-      <h4>4. Get Next Week's Posting Plan</h4><p>We give you a day-by-day content plan that gets you maximum engagement with your audience</p>
+      <div class="how-icon" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="white" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="white" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="white" stroke-width="2"/></svg>
+      </div>
+      <span class="step-num">STEP 4 — AMA</span>
+      <h4>We Build Your Weekly Plan</h4>
+      <p>We give you a day-by-day posting plan with scripts, captions and hashtags — ready every Monday morning.</p>
     </div>
+
     <div class="how-arrow">&#8594;</div>
+
     <div class="how-step">
-      <div class="how-icon"><div style="width:62px;height:62px;background:#ede9fe;border-radius:14px;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div></div>
-      <h4>5. Generate Content When Ready</h4><p>We create scroll-stopping posts, captions &amp; creatives — publish with one tap</p>
+      <div class="how-icon" style="background:linear-gradient(135deg,#10b981,#059669);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="step-num">STEP 5 — YOU</span>
+      <h4>You Post and Grow</h4>
+      <p>You execute the plan. AMA tracks what works and refines your next week automatically.</p>
     </div>
 
   </div>
 </section>
 
-<!-- INSIGHTS & PLAN -->
-<div style="background:#fff;padding:60px 48px;">
-<div style="max-width:1200px;margin:0 auto;" class="screen-grid">
-
-  <!-- INSIGHTS CARD -->
-  <div class="dark-card">
-    <div class="card-body" style="flex:1">
-      <div class="dsb">
-        <div class="dsb-logo"><span class="ama-logo-dark">ama<sup>ai</sup></span></div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
-        <div class="dsb-item on"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Insights</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Content Plan</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Generated Posts</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
-        <div class="dsb-user">
-          <img src="https://i.pravatar.cc/100?img=47" width="24" height="24" style="border-radius:50%;flex-shrink:0;object-fit:cover;" alt="Glow Skin Clinic"/>
-          <div><div style="font-size:9px;color:#fff;font-weight:600;">Glow Skin Clinic</div><div style="font-size:8px;color:#6b7280;">@glowskin.clinic</div></div>
-        </div>
+<!-- WHAT YOU GET -->
+<section class="get-section" id="benefits">
+  <div style="max-width:1000px;margin:0 auto;text-align:center;">
+    <span class="section-tag">What you get</span>
+    <h2 class="section-h2">Not just data. A complete growth system.</h2>
+    <p class="section-sub">AMA gives you everything a professional social media manager would — without the ₹30,000/month price tag.</p>
+    <div class="get-grid">
+      <div class="get-card">
+        <div class="get-icon">&#128202;</div>
+        <div class="get-title">Deep Instagram Insights</div>
+        <div class="get-text">See exactly what's working and what's holding you back — engagement rate, best content type, posting gaps, hashtag health and growth velocity.</div>
       </div>
-      <div style="padding:16px;display:flex;flex-direction:column;overflow:hidden;">
-        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:1px;">Insights Preview</div>
-        <div style="font-size:9px;color:#6b7280;margin-bottom:14px;">Based on your last 30 days</div>
-        <div style="display:grid;grid-template-columns:1fr auto;gap:16px;flex:1;min-height:0;margin-bottom:12px;">
-          <div style="display:flex;flex-direction:column;justify-content:space-between;">
-            <div>
-              <div style="font-size:9px;color:#6b7280;margin-bottom:2px;">Total Followers</div>
-              <div style="display:flex;align-items:center;justify-content:space-between;">
-                <div style="font-size:18px;font-weight:700;color:#fff;line-height:1;">12.4K</div>
-                <div style="width:24px;height:24px;background:rgba(124,58,237,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:9px;color:#6b7280;margin-bottom:2px;">Avg. Engagement Rate</div>
-              <div style="display:flex;align-items:center;justify-content:space-between;">
-                <div style="font-size:18px;font-weight:700;color:#fff;line-height:1;">2.7%</div>
-                <div style="width:24px;height:24px;background:rgba(236,72,153,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ec4899"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:9px;color:#6b7280;margin-bottom:2px;">Total Posts</div>
-              <div style="display:flex;align-items:center;justify-content:space-between;">
-                <div style="font-size:18px;font-weight:700;color:#fff;line-height:1;">18</div>
-                <div style="width:24px;height:24px;background:rgba(59,130,246,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:9px;color:#6b7280;margin-bottom:2px;">Reel Reach</div>
-              <div style="display:flex;align-items:center;justify-content:space-between;">
-                <div style="font-size:18px;font-weight:700;color:#fff;line-height:1;">8.2K</div>
-                <div style="width:24px;height:24px;background:rgba(16,185,129,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-              </div>
-            </div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:120px;">
-            <div style="font-size:10px;font-weight:600;color:#fff;">Content Mix</div>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="position:relative;width:80px;height:80px;flex-shrink:0;">
-                <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="none" stroke="#1a1730" stroke-width="15"/><circle cx="40" cy="40" r="30" fill="none" stroke="#8b5cf6" stroke-width="15" stroke-dasharray="83 188" stroke-dashoffset="0" transform="rotate(-90 40 40)"/><circle cx="40" cy="40" r="30" fill="none" stroke="#3b82f6" stroke-width="15" stroke-dasharray="53 188" stroke-dashoffset="-83" transform="rotate(-90 40 40)"/><circle cx="40" cy="40" r="30" fill="none" stroke="#10b981" stroke-width="15" stroke-dasharray="32 188" stroke-dashoffset="-136" transform="rotate(-90 40 40)"/><circle cx="40" cy="40" r="30" fill="none" stroke="#f59e0b" stroke-width="15" stroke-dasharray="21 188" stroke-dashoffset="-168" transform="rotate(-90 40 40)"/></svg>
-                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;"><div style="font-size:14px;font-weight:700;color:#fff;line-height:1;">18</div><div style="font-size:8px;color:#6b7280;">Posts</div></div>
-              </div>
-              <div style="display:flex;flex-direction:column;gap:5px;">
-                <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:#9ca3af;"><span style="width:8px;height:8px;border-radius:2px;background:#8b5cf6;flex-shrink:0;display:inline-block;"></span>Educational &nbsp;44%</div>
-                <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:#9ca3af;"><span style="width:8px;height:8px;border-radius:2px;background:#3b82f6;flex-shrink:0;display:inline-block;"></span>Promotional &nbsp;28%</div>
-                <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:#9ca3af;"><span style="width:8px;height:8px;border-radius:2px;background:#10b981;flex-shrink:0;display:inline-block;"></span>Behind the Scenes &nbsp;17%</div>
-                <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:#9ca3af;"><span style="width:8px;height:8px;border-radius:2px;background:#f59e0b;flex-shrink:0;display:inline-block;"></span>Testimonials &nbsp;11%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="background:rgba(124,58,237,0.1);border-radius:8px;padding:10px 12px;border:1px solid rgba(124,58,237,0.2);flex-shrink:0;">
-          <div style="font-size:9px;color:#8b5cf6;font-weight:700;margin-bottom:4px;">Top Insight</div>
-          <div style="font-size:9.5px;color:#9ca3af;line-height:1.5;">Educational posts with tips and how-to get 48% more engagement than your other content.</div>
-        </div>
+      <div class="get-card">
+        <div class="get-icon">&#128197;</div>
+        <div class="get-title">Weekly Content Plan</div>
+        <div class="get-text">A personalised Monday-to-Sunday posting schedule based on your audience, your niche and your natural posting frequency. Ready every Monday morning.</div>
       </div>
-    </div>
-  </div>
-
-  <!-- THIS WEEK'S PLAN CARD -->
-  <div class="dark-card">
-    <div class="card-body" style="flex:1">
-      <div class="dsb">
-        <div class="dsb-logo"><span class="ama-logo-dark">ama<sup>ai</sup></span></div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Insights</div>
-        <div class="dsb-item on"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Content Plan</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Generated Posts</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
-        <div class="dsb-user">
-          <img src="https://i.pravatar.cc/100?img=47" width="24" height="24" style="border-radius:50%;flex-shrink:0;object-fit:cover;" alt="Glow Skin Clinic"/>
-          <div><div style="font-size:9px;color:#fff;font-weight:600;">Glow Skin Clinic</div><div style="font-size:8px;color:#6b7280;">@glowskin.clinic</div></div>
-        </div>
+      <div class="get-card">
+        <div class="get-icon">&#127908;</div>
+        <div class="get-title">Reel Scripts & Captions</div>
+        <div class="get-text">Every post in your weekly plan comes with a ready-to-use reel script, 3 caption options and optimised hashtag sets. No blank page ever again.</div>
       </div>
-      <div style="display:flex;flex-direction:column;overflow:hidden;flex:1;">
-        <div style="padding:12px 12px 8px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;">
-          <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:1px;">This Week's Plan</div>
-          <div style="display:flex;justify-content:space-between;"><div style="font-size:8px;color:#6b7280;">AI-recommended posting plan</div><div style="font-size:8px;color:#6b7280;">26 May&#8211;1 June</div></div>
-        </div>
-        <div style="padding:0 12px;flex:1;overflow:hidden;">
-
-          <!-- MON: real Indian woman photo, no text overlay except title text below -->
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-            <div style="min-width:32px;"><div style="font-size:7.5px;color:#6b7280;">MON</div><div style="font-size:9.5px;font-weight:600;color:#fff;">26 MAY</div></div>
-            <div style="width:42px;height:42px;border-radius:6px;overflow:hidden;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=420&h=420&fit=crop&crop=face" width="42" height="42" style="object-fit:cover;width:42px;height:42px;display:block;" alt="post"/>
-            </div>
-            <div style="flex:1;min-width:0;">
-              <div style="display:inline-block;font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;background:rgba(16,185,129,0.2);color:#10b981;margin-bottom:2px;text-transform:uppercase;">Educational</div>
-              <div style="font-size:9.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">5 Signs Your Skin Needs Hydration</div>
-              <div style="font-size:7.5px;color:#6b7280;">Tips for a healthy, glowing skin</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:3px;flex-shrink:0;">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
-              <span style="font-size:7.5px;font-weight:600;color:#8b5cf6;border:1px solid rgba(124,58,237,0.3);padding:2px 5px;border-radius:3px;white-space:nowrap;">Ready to post</span>
-            </div>
-          </div>
-
-          <!-- WED: luxury product SVG -->
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-            <div style="min-width:32px;"><div style="font-size:7.5px;color:#6b7280;">WED</div><div style="font-size:9.5px;font-weight:600;color:#fff;">28 MAY</div></div>
-            <svg width="42" height="42" viewBox="0 0 420 420" style="border-radius:6px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="m2bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d0d0d"/><stop offset="50%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient><radialGradient id="m2spot" cx="50%" cy="45%" r="45%"><stop offset="0%" stop-color="#fff8e1" stop-opacity="0.22"/><stop offset="100%" stop-color="transparent"/></radialGradient><linearGradient id="m2bot1" x1="15%" y1="0%" x2="85%" y2="100%"><stop offset="0%" stop-color="#fff8f0"/><stop offset="40%" stop-color="#ffffff"/><stop offset="100%" stop-color="#fce4ec"/></linearGradient><linearGradient id="m2bot2" x1="15%" y1="0%" x2="85%" y2="100%"><stop offset="0%" stop-color="#f3f0ff"/><stop offset="40%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ede7f6"/></linearGradient><linearGradient id="m2gold" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffe082"/><stop offset="50%" stop-color="#ffd54f"/><stop offset="100%" stop-color="#ffb300"/></linearGradient><linearGradient id="m2rose" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f48fb1"/><stop offset="100%" stop-color="#f06292"/></linearGradient></defs>
-              <rect width="420" height="420" fill="url(#m2bg)"/><rect width="420" height="420" fill="url(#m2spot)"/>
-              <path d="M0 80 Q100 60 200 90 Q300 120 420 70" stroke="rgba(255,255,255,0.04)" stroke-width="12" fill="none"/>
-              <ellipse cx="60" cy="100" rx="22" ry="13" fill="#f48fb1" opacity="0.55" transform="rotate(-35 60 100)"/><ellipse cx="355" cy="80" rx="18" ry="11" fill="#f06292" opacity="0.5" transform="rotate(25 355 80)"/><ellipse cx="35" cy="310" rx="16" ry="10" fill="#f48fb1" opacity="0.45" transform="rotate(-15 35 310)"/><ellipse cx="370" cy="330" rx="20" ry="12" fill="#ec407a" opacity="0.4" transform="rotate(20 370 330)"/>
-              <ellipse cx="145" cy="368" rx="55" ry="12" fill="rgba(0,0,0,0.5)"/><ellipse cx="275" cy="368" rx="60" ry="12" fill="rgba(0,0,0,0.45)"/>
-              <rect x="112" y="95" width="66" height="260" rx="20" fill="url(#m2bot1)" filter="drop-shadow(0 12px 30px rgba(0,0,0,0.7))"/>
-              <rect x="130" y="64" width="30" height="36" rx="8" fill="url(#m2gold)"/><rect x="139" y="40" width="12" height="28" rx="6" fill="url(#m2gold)"/>
-              <rect x="112" y="94" width="66" height="8" rx="3" fill="url(#m2gold)"/>
-              <rect x="120" y="168" width="50" height="118" rx="4" fill="rgba(230,200,180,0.12)" stroke="rgba(244,143,177,0.3)" stroke-width="0.8"/>
-              <text x="145" y="192" font-family="Georgia,serif" font-size="13" fill="#6d2b2b" text-anchor="middle" font-weight="bold">GLOW</text>
-              <text x="145" y="208" font-family="sans-serif" font-size="7.5" fill="#ad1457" text-anchor="middle" letter-spacing="2">SKIN CLINIC</text>
-              <line x1="122" y1="215" x2="168" y2="215" stroke="url(#m2rose)" stroke-width="1.2"/>
-              <text x="145" y="230" font-family="sans-serif" font-size="8" fill="#880e4f" text-anchor="middle">Rose Serum</text>
-              <text x="145" y="244" font-family="sans-serif" font-size="7" fill="#c2185b" text-anchor="middle">30ml &middot; Vitamin C</text>
-              <rect x="162" y="103" width="9" height="244" rx="4.5" fill="rgba(255,255,255,0.28)"/>
-              <rect x="222" y="112" width="78" height="242" rx="18" fill="url(#m2bot2)" filter="drop-shadow(0 12px 30px rgba(0,0,0,0.65))"/>
-              <rect x="242" y="72" width="38" height="46" rx="10" fill="url(#m2gold)"/><rect x="258" y="46" width="6" height="30" rx="3" fill="url(#m2gold)"/>
-              <rect x="240" y="88" width="42" height="10" rx="5" fill="#ffe082"/>
-              <rect x="222" y="111" width="78" height="9" rx="3" fill="url(#m2gold)"/>
-              <rect x="230" y="182" width="62" height="110" rx="4" fill="rgba(180,160,220,0.1)" stroke="rgba(206,147,216,0.3)" stroke-width="0.8"/>
-              <text x="261" y="206" font-family="Georgia,serif" font-size="13" fill="#4a1b7a" text-anchor="middle" font-weight="bold">GLOW</text>
-              <text x="261" y="222" font-family="sans-serif" font-size="7.5" fill="#6a1b9a" text-anchor="middle" letter-spacing="2">SKIN CLINIC</text>
-              <line x1="234" y1="229" x2="288" y2="229" stroke="#ce93d8" stroke-width="1.2"/>
-              <text x="261" y="244" font-family="sans-serif" font-size="8" fill="#4a148c" text-anchor="middle">HA Moisturiser</text>
-              <text x="261" y="258" font-family="sans-serif" font-size="7" fill="#7b1fa2" text-anchor="middle">50ml &middot; Peptides</text>
-              <rect x="283" y="120" width="9" height="226" rx="4.5" fill="rgba(255,255,255,0.22)"/>
-              <circle cx="88" cy="175" r="4.5" fill="#ffd54f" opacity="0.9"/><circle cx="88" cy="175" r="2" fill="white" opacity="0.7"/><circle cx="340" cy="155" r="3.5" fill="#ffd54f" opacity="0.8"/>
-              <rect x="0" y="362" width="420" height="58" fill="rgba(0,0,0,0.78)"/>
-              <text x="210" y="387" font-family="Georgia,serif" font-size="20" fill="#fce4ec" text-anchor="middle" font-weight="bold">Bestselling Duo</text>
-              <text x="210" y="408" font-family="sans-serif" font-size="11" fill="#f48fb1" text-anchor="middle" letter-spacing="1">Hydrate &middot; Glow &middot; Protect</text>
-              <rect x="0" y="0" width="420" height="5" fill="url(#m2rose)"/>
-            </svg>
-            <div style="flex:1;min-width:0;">
-              <div style="display:inline-block;font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;background:rgba(59,130,246,0.2);color:#60a5fa;margin-bottom:2px;text-transform:uppercase;">Promotional</div>
-              <div style="font-size:9.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Our Bestselling Hydration Duo</div>
-              <div style="font-size:7.5px;color:#6b7280;">For dewy, radiant skin all day</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:3px;flex-shrink:0;">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
-              <span style="font-size:7.5px;font-weight:600;color:#8b5cf6;border:1px solid rgba(124,58,237,0.3);padding:2px 5px;border-radius:3px;white-space:nowrap;">Ready to post</span>
-            </div>
-          </div>
-
-          <!-- FRI: real Indian woman spa photo -->
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-            <div style="min-width:32px;"><div style="font-size:7.5px;color:#6b7280;">FRI</div><div style="font-size:9.5px;font-weight:600;color:#fff;">30 MAY</div></div>
-            <div style="width:42px;height:42px;border-radius:6px;overflow:hidden;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=420&h=420&fit=crop&crop=face" width="42" height="42" style="object-fit:cover;width:42px;height:42px;display:block;" alt="post"/>
-            </div>
-            <div style="flex:1;min-width:0;">
-              <div style="display:inline-block;font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;background:rgba(245,158,11,0.2);color:#f59e0b;margin-bottom:2px;text-transform:uppercase;">Engagement</div>
-              <div style="font-size:9.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Weekend Glow Treatment</div>
-              <div style="font-size:7.5px;color:#6b7280;">Book your slot and glow this weekend!</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:3px;flex-shrink:0;">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
-              <span style="font-size:7.5px;font-weight:600;color:#8b5cf6;border:1px solid rgba(124,58,237,0.3);padding:2px 5px;border-radius:3px;white-space:nowrap;">Ready to post</span>
-            </div>
-          </div>
-
-          <!-- SAT locked -->
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);opacity:0.45;">
-            <div style="min-width:32px;"><div style="font-size:7.5px;color:#6b7280;">SAT</div><div style="font-size:9.5px;font-weight:600;color:#fff;">31 MAY</div></div>
-            <div style="width:42px;height:42px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">&#128274;</div>
-            <div style="flex:1;font-size:8.5px;color:#6b7280;">More transformation content coming up</div>
-            <span style="font-size:7.5px;color:#6b7280;border:1px solid rgba(255,255,255,0.1);padding:2px 6px;border-radius:3px;white-space:nowrap;flex-shrink:0;">&#128274; Unlock</span>
-          </div>
-          <!-- SUN locked -->
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 0;opacity:0.45;">
-            <div style="min-width:32px;"><div style="font-size:7.5px;color:#6b7280;">SUN</div><div style="font-size:9.5px;font-weight:600;color:#fff;">01 JUN</div></div>
-            <div style="width:42px;height:42px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">&#128274;</div>
-            <div style="flex:1;font-size:8.5px;color:#6b7280;">Behind-the-scenes reel idea</div>
-            <span style="font-size:7.5px;color:#6b7280;border:1px solid rgba(255,255,255,0.1);padding:2px 6px;border-radius:3px;white-space:nowrap;flex-shrink:0;">&#128274; Unlock</span>
-          </div>
-        </div>
-        <!-- unlock bar -->
-        <div style="margin:8px 12px 10px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.3);border-radius:9px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-shrink:0;">
-          <div style="display:flex;align-items:center;gap:6px;">
-            <span style="font-size:14px;">&#128274;</span>
-            <div><div style="font-size:9px;font-weight:700;color:#fff;">Unlock full weekly plan with 7+ AI posts</div><div style="font-size:8px;color:#6b7280;">More variety. More ideas. More growth.</div></div>
-          </div>
-          <button style="background:#7c3aed;color:#fff;border:none;padding:7px 11px;border-radius:7px;font-size:9px;font-weight:700;cursor:pointer;white-space:nowrap;">See Plans &amp; Pricing</button>
-        </div>
+      <div class="get-card">
+        <div class="get-icon">&#128269;</div>
+        <div class="get-title">Competitor Analysis</div>
+        <div class="get-text">See how similar creators in your niche are outperforming you — and what specific content formats and topics you should be posting that you're not.</div>
       </div>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<!-- WHAT AMA GIVES YOU -->
-<section id="benefits" style="background:#f9fafb;padding:80px 48px;">
-  <div style="max-width:900px;margin:0 auto;text-align:center;">
-    <h2 style="font-size:32px;font-weight:800;color:#111827;margin-bottom:12px;">What AMA actually gives you</h2>
-    <p style="font-size:16px;color:#6b7280;margin-bottom:48px;">No more guessing what to post. Here's exactly what lands in your hands.</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left;">
-
-      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-        <div style="font-size:32px;margin-bottom:16px;">&#128202;</div>
-        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Instagram Insights</div>
-        <div style="font-size:14px;color:#6b7280;line-height:1.6;">See what's working and what's hurting your growth — in plain language.</div>
-      </div>
-
-      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-        <div style="font-size:32px;margin-bottom:16px;">&#128197;</div>
-        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Weekly Content Plan</div>
-        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Know exactly what to post every day of the week — no blank-page panic.</div>
-      </div>
-
-      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-        <div style="font-size:32px;margin-bottom:16px;">&#127912;</div>
-        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Ready-to-Post Creatives</div>
-        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Instagram-ready visuals generated specifically for your business and audience.</div>
-      </div>
-
-      <div style="background:#fff;border-radius:16px;padding:28px 24px;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-        <div style="font-size:32px;margin-bottom:16px;">&#9997;&#65039;</div>
-        <div style="font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;">Captions &amp; Hashtags</div>
-        <div style="font-size:14px;color:#6b7280;line-height:1.6;">Ready-to-publish copy optimised for engagement with your specific audience.</div>
-      </div>
-
     </div>
   </div>
 </section>
 
+<!-- COMING SOON LOCKED FEATURES TEASER -->
+<section style="background:#0f0d1a;padding:72px 48px;text-align:center;">
+  <div style="max-width:860px;margin:0 auto;">
+    <span class="section-tag" style="color:#a78bfa;">Coming in Pro</span>
+    <h2 class="section-h2" style="color:#fff;margin-bottom:14px;">Even deeper intelligence — unlocking soon</h2>
+    <p style="font-size:15px;color:#6b7280;margin-bottom:40px;line-height:1.7;">Connect your Instagram account to unlock the metrics that matter most for brand deals and serious growth.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;">
+      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
+        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Follower Demographics</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.5;">Age, gender, city &amp; state — the data brands ask for in every collab brief.</div>
+      </div>
+      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
+        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Saves &amp; Reach Per Post</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.5;"><strong style="color:#9ca3af;">Saves</strong> show what your audience found genuinely valuable. <strong style="color:#9ca3af;">Reach</strong> shows how far the algorithm pushed it.</div>
+      </div>
+      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
+        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Reel Watch Time</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.5;">See exactly where viewers drop off — and fix your hooks to keep them watching.</div>
+      </div>
+      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
+        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">YouTube Insights</div>
+        <div style="font-size:11px;color:#6b7280;line-height:1.5;">Cross-platform intelligence. Unified strategy across Instagram and YouTube.</div>
+      </div>
+    </div>
+    <a href="#waitlist" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;text-decoration:none;padding:15px 36px;border-radius:12px;font-size:15px;font-weight:700;">
+      Join Early Access to Unlock These &#8594;
+    </a>
+  </div>
+</section>
+
+<!-- WAITLIST -->
 <!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
   <div class="waitlist-inner">
     <div class="waitlist-left">
       <span class="launch-badge">Launching Soon</span>
-      <h2>AMA is launching soon!</h2>
-      <div class="sub">Add your details to join the waitlist.</div>
-      <div style="font-size:80px;margin-bottom:28px;line-height:1;">&#128640;</div>
+      <h2>Be in the first batch<br>of AMA creators.</h2>
+      <div class="sub" style="margin-bottom:32px;">AMA is launching with a small group of early creators. Get in before anyone else.</div>
       <div class="perks">
-        <div class="perk"><span style="font-size:16px;">&#128310;</span> Be the first to try AMA</div>
-        <div class="perk"><span style="font-size:16px;">&#11088;</span> Special early access benefits</div>
-        <div class="perk"><span style="font-size:16px;">&#128230;</span> Help shape the product</div>
+        <div class="perk"><span class="perk-icon">&#9889;</span><div><strong>First access</strong> — use AMA before it's public</div></div>
+        <div class="perk"><span class="perk-icon">&#127381;</span><div><strong>Founding price</strong> — locked in at early access rate forever</div></div>
+        <div class="perk"><span class="perk-icon">&#127908;</span><div><strong>Shape the product</strong> — your feedback builds AMA's next features</div></div>
+        <div class="perk"><span class="perk-icon">&#128200;</span><div><strong>Free audit</strong> — get your Instagram analysed the moment we launch</div></div>
       </div>
     </div>
     <div class="waitlist-form">
@@ -651,33 +525,29 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
           <div class="form-group">
             <label>Phone Number</label>
             <div style="display:flex;gap:6px;">
-              <select name="country_code" style="border:1px solid #e5e7eb;border-radius:8px;padding:10px 8px;font-size:13px;color:#374151;background:#fff;outline:none;font-family:inherit;width:110px;flex-shrink:0;">
-                <option value="+91" selected>🇮🇳 +91</option>
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+61">🇦🇺 +61</option>
-                <option value="+971">🇦🇪 +971</option>
-                <option value="+65">🇸🇬 +65</option>
-                <option value="+60">🇲🇾 +60</option>
-                <option value="+92">🇵🇰 +92</option>
-                <option value="+880">🇧🇩 +880</option>
-                <option value="+94">🇱🇰 +94</option>
-                <option value="+977">🇳🇵 +977</option>
-                <option value="+49">🇩🇪 +49</option>
-                <option value="+33">🇫🇷 +33</option>
-                <option value="+81">🇯🇵 +81</option>
-                <option value="+86">🇨🇳 +86</option>
-                <option value="+55">🇧🇷 +55</option>
-                <option value="+27">🇿🇦 +27</option>
-                <option value="+234">🇳🇬 +234</option>
+              <select name="country_code" style="border:1.5px solid #e5e7eb;border-radius:10px;padding:12px 8px;font-size:13px;color:#374151;background:#fff;outline:none;font-family:inherit;width:110px;flex-shrink:0;">
+                <option value="+91" selected>&#127470;&#127475; +91</option>
+                <option value="+1">&#127482;&#127480; +1</option>
+                <option value="+44">&#127468;&#127463; +44</option>
+                <option value="+61">&#127462;&#127482; +61</option>
+                <option value="+971">&#127462;&#127466; +971</option>
+                <option value="+65">&#127480;&#127468; +65</option>
+                <option value="+60">&#127474;&#127486; +60</option>
+                <option value="+92">&#127477;&#127472; +92</option>
+                <option value="+880">&#127463;&#127465; +880</option>
+                <option value="+94">&#127480;&#127473; +94</option>
+                <option value="+977">&#127475;&#127477; +977</option>
+                <option value="+49">&#127465;&#127466; +49</option>
+                <option value="+33">&#127467;&#127479; +33</option>
+                <option value="+81">&#127471;&#127477; +81</option>
               </select>
-              <input type="tel" name="phone" placeholder="Enter phone number" style="flex:1;" required>
+              <input type="tel" name="phone" placeholder="Phone number" style="flex:1;" required>
             </div>
           </div>
-          <div class="form-group"><label>Instagram Handle</label><div class="handle-wrap"><span class="handle-at">@</span><input type="text" name="instagram_handle" placeholder="yourusername"></div></div>
+          <div class="form-group"><label>Instagram Handle</label><div class="handle-wrap"><span class="handle-at">@</span><input type="text" name="instagram_handle" placeholder="yourhandle"></div></div>
         </div>
-        <button type="submit" class="join-btn">Join the Waitlist</button>
-        <div class="no-spam">No spam. Only product updates.</div>
+        <button type="submit" class="join-btn">Join the Waitlist &#8594;</button>
+        <div class="no-spam">No spam. Only product updates. Unsubscribe anytime.</div>
       </form>
     </div>
   </div>
@@ -685,26 +555,23 @@ footer{background:#fff;border-top:1px solid #e5e7eb;padding:24px 48px;display:fl
 
 <!-- FOOTER -->
 <footer>
-  <div style="font-size:13px;color:#374151;font-weight:500;">Join the first AMA beta cohort.</div>
-  <a href="https://www.instagram.com/heyama.in/" target="_blank"
-    style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;">
+  <span class="footer-logo">ama<sup>ai</sup></span>
+  <span class="footer-text">Join the first AMA beta cohort.</span>
+  <a href="https://www.instagram.com/heyama.in/" target="_blank" class="footer-ig">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
     Follow us on Instagram
   </a>
 </footer>
 
-
 <!-- SUCCESS POPUP -->
 <div class="popup-overlay" id="successPopup">
   <div class="popup-box">
-    <div class="popup-icon">🎉</div>
-    <div class="popup-title">You're on the list, <span id="popupName"></span>!</div>
-    <div class="popup-sub" style="margin-bottom:16px;">AMA is launching with a small group of early businesses.<br>We'll reach out when your spot opens.</div>
-    <div style="background:#f9fafb;border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:left;">
-      <div style="font-size:13px;font-weight:600;color:#374151;margin-bottom:10px;">In the meantime:</div>
-      <div style="font-size:13px;color:#6b7280;margin-bottom:10px;">👉 Follow AMA on Instagram for updates &amp; early previews</div>
-      <a href="https://www.instagram.com/heyama.in/" target="_blank"
-        style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;">
+    <div class="popup-icon">&#127881;</div>
+    <div class="popup-title">You're in, <span id="popupName"></span>!</div>
+    <div class="popup-sub">AMA is launching with a small group of early creators.<br>We'll reach out when your spot opens.</div>
+    <div class="popup-box-inner">
+      <p>&#128073; Follow AMA on Instagram for updates &amp; early previews</p>
+      <a href="https://www.instagram.com/heyama.in/" target="_blank" class="popup-ig-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
         Follow @heyama.in
       </a>
@@ -726,27 +593,21 @@ form.addEventListener('submit', async function(e) {
       headers: { 'Accept': 'application/json' }
     });
     if (res.ok) {
-      // Show popup with first name only
       document.getElementById('popupName').textContent = name.split(' ')[0];
       const overlay = document.getElementById('successPopup');
-      // Reset bar animation by re-inserting the element
       const oldBar = document.getElementById('popupBar');
       const newBar = oldBar.cloneNode(true);
       oldBar.parentNode.replaceChild(newBar, oldBar);
       overlay.classList.add('show');
-      // Clear form
       form.reset();
-      // Hide after 5 seconds
       setTimeout(() => overlay.classList.remove('show'), 5000);
     }
-  } catch(err) {
-    console.error(err);
-  }
+  } catch(err) { console.error(err); }
 });
-// Click overlay to dismiss early
 document.getElementById('successPopup').addEventListener('click', function(e) {
   if (e.target === this) this.classList.remove('show');
 });
 </script>
+
 </body>
 </html>
