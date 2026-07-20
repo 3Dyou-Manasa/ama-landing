@@ -1,658 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='10' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white'%3Ea%3C/text%3E%3Ctext x='22' y='16' font-family='Arial' font-size='8' font-weight='500' fill='%23f9a8d4'%3Eai%3C/text%3E%3C/svg%3E">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMA – AI Growth Assistant for Creators</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMA — Your Instagram Growth Assistant</title>
+  <meta name="description" content="AMA analyses your Instagram and gives you a personalised weekly content plan. Built for Indian creators and businesses. Free audit, no login.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/* NAV */
-html{scroll-behavior:smooth}
-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center}
-.nav-links{display:flex;gap:32px}
-.nav-links a{text-decoration:none;color:#374151;font-size:14px;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:#7c3aed}
-.nav-cta{background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:          #0f0d1a;
+      --bg-card:     #1a1730;
+      --bg-card2:    #211e38;
+      --purple:      #7c3aed;
+      --purple-mid:  #9d5cf6;
+      --purple-light:#c4b5fd;
+      --pink:        #ec4899;
+      --grad:        linear-gradient(135deg, #7c3aed, #ec4899);
+      --grad-subtle: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(236,72,153,0.08));
+      --text:        #f1f0f7;
+      --text-2:      #b8b4d0;
+      --text-3:      #6e6a8a;
+      --border:      rgba(124,58,237,0.22);
+      --border-soft: rgba(255,255,255,0.07);
+      --green:       #10b981;
+      --amber:       #f59e0b;
+      --radius:      14px;
+      --radius-sm:   8px;
+    }
 
-/* LOGO */
-.ama-logo-nav{font-family:Arial,sans-serif;font-size:24px;font-weight:700;color:#7c3aed;letter-spacing:0.5px;line-height:1}
-.ama-logo-nav sup{font-size:11px;font-weight:500;color:#ec4899;vertical-align:super;line-height:0}
-.ama-logo-dark{font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#fff;letter-spacing:0.5px;line-height:1}
-.ama-logo-dark sup{font-size:7px;font-weight:500;color:#a78bfa;vertical-align:super;line-height:0}
+    /* ── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-/* HERO */
-.hero-wrap{max-width:1200px;margin:0 auto;padding:72px 48px 80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.hero-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase}
-.hero h1{font-size:46px;font-weight:900;line-height:1.15;color:#111827;margin-bottom:22px}
-.hero h1 span{color:#7c3aed}
-.hero h1 em{color:#ec4899;font-style:normal}
-.hero-text{align-self:center}.hero-sub{color:#6b7280;font-size:17px;line-height:1.7;margin-bottom:36px;max-width:420px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px}
-.btn-primary{background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;border:none;padding:15px 32px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-.btn-outline{display:inline-flex;align-items:center;padding:15px 32px;border-radius:10px;font-size:15px;font-weight:700;border:2px solid #7c3aed;color:#7c3aed;text-decoration:none;background:#fff}
-.hero-note{font-size:13px;color:#9ca3af;margin-bottom:32px}
-.platform-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.platform-pill{display:flex;align-items:center;gap:6px;background:#f3f4f6;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;color:#374151}
-.platform-coming{background:#f9fafb;color:#9ca3af;border:1px solid #e5e7eb;font-size:11px}
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
 
-/* DARK CARD SYSTEM */
-.dark-card{background:#0f0d1a;border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column}
-.hero-dark-card{background:#0f0d1a;border-radius:20px;overflow:hidden;color:#fff;box-shadow:0 30px 80px rgba(0,0,0,0.4);display:flex;flex-direction:column}
-.card-topbar{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:8px;flex-shrink:0}
-.card-body{display:grid;grid-template-columns:120px 1fr;flex:1;min-height:0}
-.dsb{background:#15122b;padding:8px 0;display:flex;flex-direction:column}
-.dsb-logo{padding:10px 13px;display:flex;align-items:center}
-.dsb-item{display:flex;align-items:center;gap:6px;padding:8px 13px;font-size:9.5px;color:#6b7280;cursor:pointer;transition:all 0.2s}
-.dsb-item.on{color:#8b5cf6;background:rgba(124,58,237,0.15);border-right:2px solid #7c3aed}
-.dsb-user{margin-top:auto;padding:10px 13px;display:flex;align-items:center;gap:7px;border-top:1px solid rgba(255,255,255,0.06)}
-.stat-card{background:#1a1730;border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.07)}
-.stat-label{font-size:8px;color:#9ca3af;margin-bottom:4px;font-weight:500}
-.stat-val{font-size:17px;font-weight:700;color:#fff;line-height:1.1}
-.stat-sub{font-size:8px;margin-top:4px;line-height:1.4}
+    /* ── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,13,26,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 800; color: var(--purple-light);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo sup { font-size: 11px; font-weight: 700; color: var(--pink); vertical-align: super; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 14px; color: var(--text-2); font-weight: 500; transition: color .15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--grad); color: #fff;
+      padding: 9px 20px; border-radius: 20px;
+      font-size: 14px; font-weight: 700;
+      transition: opacity .15s;
+    }
+    .nav-cta:hover { opacity: .88; }
 
-/* HOW IT WORKS */
-.how-section{background:#f9fafb;padding:72px 48px;text-align:center}
-.section-tag{display:inline-block;font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.section-h2{font-size:36px;font-weight:800;color:#111827;margin-bottom:16px;line-height:1.2}
-.section-sub{font-size:17px;color:#6b7280;max-width:560px;margin:0 auto 56px;line-height:1.7}
-.how-steps{display:flex;align-items:flex-start;justify-content:center;max-width:1100px;margin:0 auto}
-.how-step{flex:1;text-align:center;padding:0 10px}
-.how-icon{width:70px;height:70px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;border-radius:18px}
-.how-step h4{font-size:14px;font-weight:700;color:#111827;margin-bottom:8px}
-.how-step p{font-size:12.5px;color:#6b7280;line-height:1.65}
-.how-step .step-num{font-size:10px;font-weight:700;color:#7c3aed;margin-bottom:10px;display:block;letter-spacing:1px}
-.how-arrow{display:flex;align-items:flex-start;padding-top:26px;color:#d1d5db;font-size:22px;flex-shrink:0}
+    /* ── HERO ───────────────────────────────────────────────── */
+    #hero {
+      padding: 90px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-kicker {
+      display: inline-block;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: var(--purple-light);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .hero-h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 18px; color: var(--text-2);
+      max-width: 560px; margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .hero-cta-wrap { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grad);
+      color: #fff; font-size: 16px; font-weight: 700;
+      padding: 15px 32px; border-radius: 50px;
+      transition: opacity .15s, transform .15s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-soft);
+      color: var(--text); font-size: 15px; font-weight: 600;
+      padding: 15px 28px; border-radius: 50px;
+      transition: background .15s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+    .hero-proof {
+      font-size: 13px; color: var(--text-3);
+    }
+    .hero-proof span { color: var(--green); font-weight: 600; }
 
-/* SCREENS GRID */
-.screens-section{background:#fff;padding:72px 48px}
-.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1200px;margin:0 auto}
-.screen-label{font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+    /* ── AUDIENCE TOGGLE ────────────────────────────────────── */
+    #audience { padding: 0 0 80px; }
+    .audience-toggle-wrap { display: flex; justify-content: center; margin-bottom: 48px; }
+    .audience-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-soft);
+      border-radius: 50px;
+      padding: 4px;
+    }
+    .aud-tab {
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-size: 15px; font-weight: 700;
+      cursor: pointer; border: none;
+      background: transparent;
+      color: var(--text-3);
+      transition: all .2s;
+    }
+    .aud-tab.active {
+      background: var(--grad);
+      color: #fff;
+    }
 
-/* WHO ITS FOR */
-.for-section{background:#fff;padding:72px 48px}
-.creator-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1100px;margin:0 auto}
-.creator-card{border-radius:18px;overflow:hidden;text-align:center;padding-bottom:20px;border:1px solid transparent;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
-.creator-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
-.creator-emoji-wrap{height:120px;display:flex;align-items:center;justify-content:center;font-size:56px;margin-bottom:16px}
-.creator-title{font-size:15px;font-weight:700;color:#111827;margin-bottom:6px;padding:0 14px}
-.creator-desc{font-size:12.5px;color:#6b7280;line-height:1.5;padding:0 16px}
+    .aud-panel { display: none; }
+    .aud-panel.active { display: block; }
 
-/* PAIN POINT */
-.pain-section{background:#0a0015;padding:72px 48px;text-align:center}
-.pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:860px;margin:0 auto 44px}
-.pain-card{background:#1a1730;border-radius:16px;padding:32px 28px;text-align:left;border:1px solid rgba(255,255,255,0.07)}
-.pain-icon{font-size:32px;margin-bottom:14px}
-.pain-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
-.pain-text{font-size:13.5px;color:#9ca3af;line-height:1.7}
+    /* audience hero text per panel */
+    .aud-headline {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 800; letter-spacing: -1px;
+      text-align: center; margin-bottom: 14px;
+    }
+    .aud-sub {
+      text-align: center; color: var(--text-2);
+      font-size: 16px; max-width: 580px;
+      margin: 0 auto 48px; line-height: 1.6;
+    }
 
-/* INSIGHTS MOCKUP */
-.insight-stat-row{display:flex;flex-direction:column;justify-content:space-between;gap:10px;flex:1}
-.insight-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-.insight-row:last-child{border-bottom:none}
+    /* niche grid */
+    .niche-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .niche-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+    }
+    .niche-card .nc-icon { font-size: 28px; margin-bottom: 10px; }
+    .niche-card .nc-label { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .niche-card .nc-desc { font-size: 12px; color: var(--text-3); line-height: 1.5; }
 
-/* WHAT YOU GET */
-.get-section{background:#f9fafb;padding:72px 48px}
-.get-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1000px;margin:0 auto}
-.get-card{background:#fff;border-radius:18px;padding:36px 28px;border:1px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s}
-.get-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1)}
-.get-icon{font-size:36px;margin-bottom:20px}
-.get-title{font-size:17px;font-weight:700;color:#111827;margin-bottom:12px}
-.get-text{font-size:13.5px;color:#6b7280;line-height:1.7}
+    /* ── PROBLEM SECTION ────────────────────────────────────── */
+    #problem { background: var(--bg); }
+    .section-kicker {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.4px; color: var(--purple-light);
+      margin-bottom: 16px;
+    }
+    .section-h2 {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800; letter-spacing: -1px;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .section-h2 em {
+      font-style: normal;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub { font-size: 17px; color: var(--text-2); line-height: 1.6; max-width: 540px; margin-bottom: 40px; }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+    }
+    .problem-card {
+      background: var(--grad-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .problem-card .pc-icon { font-size: 26px; margin-bottom: 12px; }
+    .problem-card .pc-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .problem-card .pc-body { font-size: 13px; color: var(--text-2); line-height: 1.55; }
 
-/* WAITLIST */
-.waitlist-section{background:#fff;padding:72px 48px}
-.waitlist-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.waitlist-left{text-align:center}
-.launch-badge{display:inline-block;background:#ede9fe;color:#7c3aed;font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
-.waitlist-left h2{font-size:34px;font-weight:800;color:#111827;margin-bottom:12px}
-.waitlist-left .sub{font-size:16px;color:#7c3aed;font-weight:600;margin-bottom:32px}
-.perks{display:flex;flex-direction:column;gap:18px;text-align:left;max-width:320px;margin:0 auto}
-.perk{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:#374151;line-height:1.5}
-.perk-icon{font-size:18px;flex-shrink:0;margin-top:1px}
-.waitlist-form{background:#fff;border-radius:20px;padding:36px;box-shadow:0 4px 30px rgba(0,0,0,0.1);border:1px solid #e5e7eb}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.form-group{display:flex;flex-direction:column;gap:7px}
-.form-group label{font-size:12px;font-weight:700;color:#374151;letter-spacing:0.3px}
-.form-group input,.form-group select{border:1.5px solid #e5e7eb;border-radius:10px;padding:12px 14px;font-size:14px;color:#374151;background:#fff;outline:none;font-family:inherit;transition:border-color 0.2s}
-.form-group input:focus,.form-group select:focus{border-color:#7c3aed}
-.form-group input::placeholder{color:#9ca3af}
-.handle-wrap{position:relative}
-.handle-at{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:14px}
-.handle-wrap input{padding-left:28px}
-.join-btn{width:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;padding:16px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:opacity 0.2s}
-.join-btn:hover{opacity:0.92}
-.no-spam{text-align:center;font-size:12px;color:#9ca3af;margin-top:12px}
+    /* ── HOW IT WORKS ───────────────────────────────────────── */
+    #how { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .step {
+      padding: 28px 24px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute; right: -12px; top: 34px;
+      font-size: 18px; color: var(--text-3);
+    }
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--grad);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .step-who {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-3); margin-bottom: 6px;
+    }
+    .step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .step-body { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
-/* FOOTER */
-footer{background:#0f0d1a;padding:28px 48px;display:flex;align-items:center;justify-content:space-between}
-.footer-logo{font-family:Arial,sans-serif;font-size:20px;font-weight:700;color:#fff}
-.footer-logo sup{font-size:9px;font-weight:500;color:#a78bfa;vertical-align:super;line-height:0}
-.footer-text{font-size:13px;color:#6b7280}
-.footer-ig{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700}
+    /* ── WHAT YOU GET ───────────────────────────────────────── */
+    #benefits { background: var(--bg-card); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .benefit-card {
+      background: var(--bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .benefit-card .b-icon { font-size: 28px; margin-bottom: 14px; }
+    .benefit-card .b-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .benefit-card .b-body { font-size: 13px; color: var(--text-2); line-height: 1.6; }
 
-/* POPUP */
-.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center}
-.popup-overlay.show{display:flex}
-.popup-box{background:#fff;border-radius:24px;padding:44px 48px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.2);max-width:440px;width:90%;animation:popIn 0.3s ease}
-@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
-.popup-icon{font-size:52px;margin-bottom:18px}
-.popup-title{font-size:24px;font-weight:800;color:#111827;margin-bottom:10px}
-.popup-sub{font-size:15px;color:#6b7280;line-height:1.65;margin-bottom:20px}
-.popup-box-inner{background:#f9fafb;border-radius:12px;padding:16px 18px;margin-bottom:20px;text-align:left}
-.popup-box-inner p{font-size:13px;font-weight:600;color:#374151;margin-bottom:10px}
-.popup-ig-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e1306c,#f77737);color:#fff;text-decoration:none;padding:11px 22px;border-radius:9px;font-size:13px;font-weight:700}
-.popup-bar{height:4px;background:#e5e7eb;border-radius:2px;margin-top:20px;overflow:hidden}
-.popup-bar-fill{height:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);border-radius:2px;animation:drain 5s linear forwards}
-@keyframes drain{from{width:100%}to{width:0%}}
+    /* ── PRICING CALLOUT ────────────────────────────────────── */
+    #pricing {
+      background: var(--bg);
+    }
+    .pricing-card {
+      background: var(--grad-subtle);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .pricing-badge {
+      display: inline-block;
+      background: var(--grad);
+      color: #fff;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .pricing-amount {
+      font-size: 60px; font-weight: 900; letter-spacing: -3px;
+      line-height: 1; margin-bottom: 4px;
+    }
+    .pricing-amount span { font-size: 26px; font-weight: 700; vertical-align: super; }
+    .pricing-period { color: var(--text-3); font-size: 15px; margin-bottom: 20px; }
+    .pricing-tagline { font-size: 17px; color: var(--text-2); max-width: 380px; margin: 0 auto 28px; line-height: 1.6; }
+    .pricing-perks { display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 32px; }
+    .pricing-perk { font-size: 14px; color: var(--text-2); display: flex; gap: 10px; align-items: flex-start; }
+    .pricing-perk::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .pricing-note { font-size: 12px; color: var(--text-3); margin-top: 14px; }
 
-/* MOBILE */
-@media(max-width:900px){
-  nav{padding:0 20px;height:56px}
-  .nav-links{display:none}
-  .nav-cta{padding:8px 14px;font-size:12px}
+    /* ── FINAL CTA ──────────────────────────────────────────── */
+    #cta {
+      background: var(--bg-card);
+      text-align: center;
+    }
+    .cta-h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900; letter-spacing: -1.5px;
+      line-height: 1.1; margin-bottom: 16px;
+    }
+    .cta-h2 em {
+      font-style: normal;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cta-sub { color: var(--text-2); font-size: 17px; max-width: 480px; margin: 0 auto 32px; }
 
-  /* Hero — stack, show dashboard below text */
-  .hero-wrap{grid-template-columns:1fr;gap:32px;padding:40px 20px 48px}
-  .hero h1{font-size:30px}
-  .hero-sub{font-size:15px;max-width:100%}
-  .hero-btns{flex-direction:column}
-  .btn-primary,.btn-outline{width:100%;justify-content:center}
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border-soft);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-logo { font-size: 16px; font-weight: 800; color: var(--purple-light); }
+    .footer-logo sup { font-size: 9px; color: var(--pink); vertical-align: super; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: var(--text-3); transition: color .15s; }
+    .footer-links a:hover { color: var(--text-2); }
+    .footer-right { font-size: 12px; color: var(--text-3); }
 
-  /* Dashboard card on mobile — show it, scaled to fit */
-  .hero-dark-card{display:flex;border-radius:14px;overflow:hidden}
-  .card-topbar{padding:9px 12px}
-  .card-body{grid-template-columns:100px 1fr}
-  .dsb{padding:6px 0}
-  .dsb-logo{padding:8px 10px}
-  .dsb-item{padding:6px 10px;font-size:8.5px;gap:5px}
-  .dsb-user{padding:8px 10px;gap:5px}
-  .stat-card{padding:9px}
-  .stat-val{font-size:14px}
-  .stat-label{font-size:7.5px}
-  .stat-sub{font-size:7px}
-
-  /* Sections */
-  .pain-section,.how-section,.for-section,.get-section,.waitlist-section{padding:52px 20px}
-  .pain-cards{grid-template-columns:1fr;gap:14px}
-  .how-steps{flex-direction:column;align-items:center}
-  .how-step{width:100%;max-width:300px;padding:12px 0}
-  .how-arrow{transform:rotate(90deg);padding:2px 0}
-  .creator-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .get-grid{grid-template-columns:1fr 1fr;gap:16px}
-  .waitlist-inner{grid-template-columns:1fr;gap:40px}
-  .form-row{grid-template-columns:1fr}
-  .waitlist-form{padding:24px 18px}
-  footer{flex-direction:column;gap:16px;padding:24px 20px;text-align:center}
-  .section-h2{font-size:26px;line-height:1.25}
-
-  /* Coming in Pro section */
-  section[id="coming-pro"] .pro-grid,
-  .pro-grid{grid-template-columns:1fr 1fr !important;gap:14px !important}
-}
-
-@media(max-width:480px){
-  .hero h1{font-size:26px}
-  .hero-sub{font-size:14px}
-  .get-grid{grid-template-columns:1fr}
-  .creator-grid{grid-template-columns:repeat(2,1fr)}
-  .popup-box{padding:28px 20px}
-  .pro-grid{grid-template-columns:1fr !important}
-  .pro-grid div strong{display:inline}
-}
-
-/* Dashboard card mobile fix — target all screen sizes below 600px */
-@media(max-width:600px){
-  /* Hide sidebar on mobile to give content more room */
-  .hero-dark-card .dsb{display:none}
-  .hero-dark-card .card-body{grid-template-columns:1fr}
-  .hero-dark-card .card-topbar{padding:8px 12px}
-
-  /* Stat grids inside dashboard — 2 cols on mobile */
-  .hero-dark-card .stat-grid-3{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:6px;
-    margin-bottom:6px;
-  }
-  .hero-dark-card .stat-card{padding:10px 10px}
-  .hero-dark-card .stat-val{font-size:15px}
-  .hero-dark-card .stat-label{font-size:7.5px}
-  .hero-dark-card .stat-sub{font-size:7.5px}
-
-  /* Recommendation card */
-  .hero-dark-card .rec-card{padding:10px}
-  .hero-dark-card .rec-text{font-size:11px;line-height:1.5}
-}
-</style>
+    /* ── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      section { padding: 56px 0; }
+      .nav-links { display: none; }
+      .hero-h1 { letter-spacing: -1.5px; }
+      .steps { grid-template-columns: 1fr; }
+      .step:not(:last-child)::after { content: '↓'; right: auto; left: 28px; top: auto; bottom: -16px; }
+      .pricing-card { padding: 32px 20px; }
+      .pricing-amount { font-size: 48px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═══ NAV ═══ -->
 <nav>
-  <div class="nav-logo">
-    <span class="ama-logo-nav">ama<sup>ai</sup></span>
+  <div class="wrap nav-inner">
+    <div class="nav-logo">ama<sup>ai</sup></div>
+    <div class="nav-links">
+      <a href="#audience">Who it's for</a>
+      <a href="#how">How it works</a>
+      <a href="#benefits">What you get</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <a class="nav-cta" href="https://demo.heyama.in" target="_blank">Try Free Audit →</a>
   </div>
-  <div class="nav-links">
-    <a href="#who">Who it's For</a>
-    <a href="#how">How it Works</a>
-    <a href="#benefits">What You Get</a>
-    <a href="#waitlist">Join Waitlist</a>
-  </div>
-  <a href="#waitlist" class="nav-cta">Join Early Access</a>
 </nav>
 
-<!-- HERO -->
-<section>
-<div class="hero-wrap">
-  <div class="hero hero-text" style="align-self:center;">
-    <span class="hero-badge">AI Growth Assistant for Creators</span>
-    <h1>You're posting.<br>But you're <em>not growing.</em><br><span>AMA tells you why.</span></h1>
-    <p class="hero-sub">AMA studies your Instagram and gives you a clear, personalised plan — what to post, when to post it, and exactly what to say.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="alert('Demo coming soon — join early access to be notified when it\'s live!')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="white"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
-        Analyze My Instagram
-      </button>
-      <a href="#waitlist" class="btn-outline">Join Early Access</a>
-    </div>
-    <div class="hero-note">Free audit &bull; No login required &bull; Results in 60 seconds</div>
-    <div style="font-size:13px;color:#374151;font-weight:500;margin-bottom:10px;">More platforms coming soon:</div>
-    <div class="platform-row">
-      <div class="platform-pill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" fill="#FF0000"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-        YouTube
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO DASHBOARD MOCKUP -->
-  <div class="hero-dark-card">
-    <!-- topbar -->
-    <div class="card-topbar">
-      <span class="ama-logo-dark">ama<sup>ai</sup></span>
-      <div style="margin-left:auto;font-size:9px;color:#6b7280;">Last updated: Today &nbsp;&#x21BB;</div>
-    </div>
-    <div class="card-body">
-      <!-- sidebar -->
-      <div class="dsb">
-        <div class="dsb-logo"><span class="ama-logo-dark">ama<sup>ai</sup></span></div>
-        <div class="dsb-item on"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Growth Insights</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Weekly Plan</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Peer Compare</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Content Calendar</div>
-        <div class="dsb-item"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
-        <div class="dsb-user">
-          <img src="https://i.pravatar.cc/100?img=47" width="24" height="24" style="border-radius:50%;flex-shrink:0;object-fit:cover;" alt="creator"/>
-          <div><div style="font-size:9px;color:#fff;font-weight:600;">Priya Sharma</div><div style="font-size:8px;color:#6b7280;">@priyalifestyle &bull; 42.6K</div></div>
-        </div>
-      </div>
-      <!-- dashboard content -->
-      <div style="padding:14px;overflow:hidden;display:flex;flex-direction:column;gap:8px;">
-        <div>
-          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:1px;">Dashboard</div>
-          <div style="font-size:8.5px;color:#9ca3af;">Here's what AMA found about your Instagram this week</div>
-        </div>
-        <!-- 3 stat cards row 1 -->
-        <div class="stat-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
-          <div class="stat-card">
-            <div class="stat-label">Engagement Rate</div>
-            <div class="stat-val">3.8%</div>
-            <div class="stat-sub" style="color:#10b981;">&#x2191; Above average for your follower range</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Best Content</div>
-            <div class="stat-val" style="font-size:13px;">Reels &#9733;</div>
-            <div class="stat-sub" style="color:#9ca3af;">Short videos get 4x more reach in your niche</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Posting Consistency</div>
-            <div class="stat-val" style="font-size:13px;color:#f59e0b;">Inconsistent</div>
-            <div class="stat-sub" style="color:#9ca3af;">3 gaps &gt;5 days last month</div>
-          </div>
-        </div>
-        <!-- 3 stat cards row 2 -->
-        <div class="stat-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
-          <div class="stat-card">
-            <div class="stat-label" style="color:#8b5cf6;font-weight:700;">Best Time to Post</div>
-            <div class="stat-val" style="font-size:13px;">Tue &amp; Fri 8PM</div>
-            <div class="stat-sub" style="color:#9ca3af;">Your audience peaks then</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label" style="color:#f59e0b;font-weight:700;">Hashtag Health</div>
-            <div class="stat-val" style="font-size:13px;color:#ef4444;">Too Broad</div>
-            <div class="stat-sub" style="color:#9ca3af;">Using 10M+ tags — switch to 50K–500K</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label" style="color:#10b981;font-weight:700;">Growth Potential</div>
-            <div class="stat-val" style="font-size:13px;">+3,200/mo</div>
-            <div class="stat-sub" style="color:#9ca3af;">vs current +820/mo</div>
-          </div>
-        </div>
-        <!-- AMA recommendation -->
-        <div class="stat-card rec-card" style="display:flex;gap:8px;align-items:flex-start;">
-          <div style="width:22px;height:22px;background:rgba(124,58,237,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;">&#128161;</div>
-          <div>
-            <div style="font-size:8.5px;color:#8b5cf6;font-weight:700;margin-bottom:3px;">AMA's #1 Recommendation This Week</div>
-            <div class="rec-text" style="font-size:8.5px;color:#9ca3af;line-height:1.55;">Short video Reels are getting 4x more reach in your niche right now. You're only posting 3 Reels a week — bump it to 5 and post on Tuesday 8PM, Thursday 7PM &amp; Saturday 6PM.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- PAIN POINT -->
-<section class="pain-section">
-  <div style="max-width:900px;margin:0 auto;">
-    <span class="section-tag" style="color:#a78bfa;">The real problem</span>
-    <h2 class="section-h2" style="color:#fff;margin-bottom:16px;">Most creators don't need more content.<br><span style="color:#a78bfa;">They need to know what's actually working.</span></h2>
-    <p style="font-size:16px;color:#6b7280;margin-bottom:44px;line-height:1.7;">You're already putting in the work. The problem is you're flying blind — posting by gut feel with no idea what your audience actually responds to.</p>
-    <div class="pain-cards">
-      <div class="pain-card">
-        <div class="pain-icon">&#128269;</div>
-        <div class="pain-title">What is working</div>
-        <div class="pain-text">Which posts drive followers, saves and DMs — and the exact pattern behind them that you can repeat.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">&#9888;&#65039;</div>
-        <div class="pain-title">What is missing</div>
-        <div class="pain-text">The content gaps your audience is hungry for — that similar creators are filling while your growth stalls.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">&#128197;</div>
-        <div class="pain-title">What to post next</div>
-        <div class="pain-text">Not generic tips. A specific, data-backed plan for your account, your niche, and your audience.</div>
-      </div>
-    </div>
-    <a href="#waitlist" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;text-decoration:none;padding:16px 36px;border-radius:12px;font-size:15px;font-weight:700;">
-      Get My Free Instagram Audit &#8594;
-    </a>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section class="for-section" id="who">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;">
-    <span class="section-tag">Who it's for</span>
-    <h2 class="section-h2">If you create content to grow an audience,<br><span style="color:#7c3aed;">AMA is built for you.</span></h2>
-    <p class="section-sub">Indian creators with 10,000–80,000 followers who are serious about growth and tired of guessing.</p>
-    <div class="creator-grid">
-      <div class="creator-card" style="background:#fdf4ff;border-color:#f3e8ff;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#f3e8ff,#ede9fe);">&#127947;&#65039;</div>
-        <div class="creator-title">Fitness Creator</div>
-        <div class="creator-desc">Grow beyond plateaus and turn followers into clients</div>
-      </div>
-      <div class="creator-card" style="background:#fff7ed;border-color:#fed7aa;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">&#127860;</div>
-        <div class="creator-title">Food Blogger</div>
-        <div class="creator-desc">Know which recipes go viral and why your audience saves them</div>
-      </div>
-      <div class="creator-card" style="background:#fdf2f8;border-color:#f9a8d4;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">&#128141;</div>
-        <div class="creator-title">Fashion Creator</div>
-        <div class="creator-desc">Unlock the content that attracts brand collabs and new followers</div>
-      </div>
-      <div class="creator-card" style="background:#f0fdf4;border-color:#bbf7d0;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">&#128200;</div>
-        <div class="creator-title">Finance Creator</div>
-        <div class="creator-desc">Build authority and grow a loyal audience that trusts your advice</div>
-      </div>
-      <div class="creator-card" style="background:#fefce8;border-color:#fef08a;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#fef9c3,#fef08a);">&#127775;</div>
-        <div class="creator-title">Motivational Creator</div>
-        <div class="creator-desc">Find the hooks that resonate deeply and get shared widely</div>
-      </div>
-      <div class="creator-card" style="background:#eff6ff;border-color:#bfdbfe;">
-        <div class="creator-emoji-wrap" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">&#9968;&#65039;</div>
-        <div class="creator-title">Travel Creator</div>
-        <div class="creator-desc">Post at the right time with the right content to maximise reach</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
-  <span class="section-tag">How it works</span>
-  <h2 class="section-h2">From your Instagram handle<br>to your weekly plan — in 60 seconds</h2>
-  <p class="section-sub">You do steps 1 and 5. AMA handles everything in between.</p>
-  <div class="how-steps">
-
-    <div class="how-step">
-      <div class="how-icon" style="background:#ede9fe;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#7c3aed" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#7c3aed" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#7c3aed"/></svg>
-      </div>
-      <span class="step-num">STEP 1 — YOU</span>
-      <h4>Enter Your Instagram Handle</h4>
-      <p>Type your handle. No login, no password, no permission needed. Takes 10 seconds.</p>
-    </div>
-
-    <div class="how-arrow">&#8594;</div>
-
-    <div class="how-step">
-      <div class="how-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <span class="step-num">STEP 2 — AMA</span>
-      <h4>We Audit Your Profile</h4>
-      <p>We scan your posts, reels, engagement patterns and compare you to similar creators in your niche.</p>
-    </div>
-
-    <div class="how-arrow">&#8594;</div>
-
-    <div class="how-step">
-      <div class="how-icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-      </div>
-      <span class="step-num">STEP 3 — AMA</span>
-      <h4>We Discover What's Missing</h4>
-      <p>We surface the exact gaps hurting your growth — inconsistency, wrong content type, timing, hashtags.</p>
-    </div>
-
-    <div class="how-arrow">&#8594;</div>
-
-    <div class="how-step">
-      <div class="how-icon" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="white" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="white" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="white" stroke-width="2"/></svg>
-      </div>
-      <span class="step-num">STEP 4 — AMA</span>
-      <h4>We Build Your Weekly Plan</h4>
-      <p>We give you a day-by-day posting plan with scripts, captions and hashtags — ready every Monday morning.</p>
-    </div>
-
-    <div class="how-arrow">&#8594;</div>
-
-    <div class="how-step">
-      <div class="how-icon" style="background:linear-gradient(135deg,#10b981,#059669);">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <span class="step-num">STEP 5 — YOU</span>
-      <h4>You Post and Grow</h4>
-      <p>You execute the plan. AMA tracks what works and refines your next week automatically.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHAT YOU GET -->
-<section class="get-section" id="benefits">
-  <div style="max-width:1000px;margin:0 auto;text-align:center;">
-    <span class="section-tag">What you get</span>
-    <h2 class="section-h2">Not just data. A complete growth system.</h2>
-    <p class="section-sub">AMA gives you everything a professional social media manager would — without the ₹30,000/month price tag.</p>
-    <div class="get-grid">
-      <div class="get-card">
-        <div class="get-icon">&#128202;</div>
-        <div class="get-title">Deep Instagram Insights</div>
-        <div class="get-text">See exactly what's working and what's holding you back — engagement rate, best content type, posting gaps, hashtag health and growth velocity.</div>
-      </div>
-      <div class="get-card">
-        <div class="get-icon">&#128197;</div>
-        <div class="get-title">Weekly Content Plan</div>
-        <div class="get-text">A personalised Monday-to-Sunday posting schedule based on your audience, your niche and your natural posting frequency. Ready every Monday morning.</div>
-      </div>
-      <div class="get-card">
-        <div class="get-icon">&#127908;</div>
-        <div class="get-title">Reel Scripts & Captions</div>
-        <div class="get-text">Every post in your weekly plan comes with a ready-to-use reel script, 3 caption options and optimised hashtag sets. No blank page ever again.</div>
-      </div>
-      <div class="get-card">
-        <div class="get-icon">&#128269;</div>
-        <div class="get-title">Peer Compare</div>
-        <div class="get-text">See how similar creators in your niche are performing — what they're posting, what's working for them, and what you should be doing differently.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMING SOON LOCKED FEATURES TEASER -->
-<section style="background:#0f0d1a;padding:72px 48px;text-align:center;">
-  <div style="max-width:860px;margin:0 auto;">
-    <span class="section-tag" style="color:#a78bfa;">Coming in Pro</span>
-    <h2 class="section-h2" style="color:#fff;margin-bottom:14px;">Even deeper intelligence — unlocking soon</h2>
-    <p style="font-size:15px;color:#6b7280;margin-bottom:40px;line-height:1.7;">Connect your Instagram account to unlock the metrics that matter most for brand deals and serious growth.</p>
-    <div class="pro-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;">
-      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
-        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Follower Demographics</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.5;">Age, gender, city &amp; state — the data brands ask for in every collab brief.</div>
-      </div>
-      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
-        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Saves &amp; Reach Per Post</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.6;">Saves = content your audience found genuinely valuable. Reach = how far the algorithm pushed it. Two very different signals.</div>
-      </div>
-      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
-        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Reel Watch Time</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.5;">See exactly where viewers drop off — and fix your hooks to keep them watching.</div>
-      </div>
-      <div style="background:#1a1730;border-radius:14px;padding:20px 16px;border:1px solid rgba(255,255,255,0.07);text-align:left;">
-        <div style="font-size:22px;margin-bottom:10px;">&#128274;</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">YouTube Insights</div>
-        <div style="font-size:11px;color:#6b7280;line-height:1.5;">Cross-platform intelligence. Unified strategy across Instagram and YouTube.</div>
-      </div>
-    </div>
-    <a href="#waitlist" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;text-decoration:none;padding:15px 36px;border-radius:12px;font-size:15px;font-weight:700;">
-      Join Early Access to Unlock These &#8594;
-    </a>
-  </div>
-</section>
-
-<!-- WAITLIST -->
-<!-- WAITLIST -->
-<section class="waitlist-section" id="waitlist">
-  <div class="waitlist-inner">
-    <div class="waitlist-left">
-      <span class="launch-badge">Launching Soon</span>
-      <h2>Be in the first batch<br>of AMA creators.</h2>
-      <div class="sub" style="margin-bottom:32px;">AMA is launching with a small group of early creators. Get in before anyone else.</div>
-      <div class="perks">
-        <div class="perk"><span class="perk-icon">&#9889;</span><div><strong>First access</strong> — use AMA before it's public</div></div>
-        <div class="perk"><span class="perk-icon">&#127381;</span><div><strong>Founding price</strong> — locked in at early access rate forever</div></div>
-        <div class="perk"><span class="perk-icon">&#127908;</span><div><strong>Shape the product</strong> — your feedback builds AMA's next features</div></div>
-        <div class="perk"><span class="perk-icon">&#128200;</span><div><strong>Free audit</strong> — get your Instagram analysed the moment we launch</div></div>
-      </div>
-    </div>
-    <div class="waitlist-form">
-      <form action="https://formspree.io/f/mgoqdbdj" method="POST">
-        <div class="form-row">
-          <div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="Enter your email" required></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone Number</label>
-            <div style="display:flex;gap:6px;">
-              <select name="country_code" style="border:1.5px solid #e5e7eb;border-radius:10px;padding:12px 8px;font-size:13px;color:#374151;background:#fff;outline:none;font-family:inherit;width:110px;flex-shrink:0;">
-                <option value="+91" selected>&#127470;&#127475; +91</option>
-                <option value="+1">&#127482;&#127480; +1</option>
-                <option value="+44">&#127468;&#127463; +44</option>
-                <option value="+61">&#127462;&#127482; +61</option>
-                <option value="+971">&#127462;&#127466; +971</option>
-                <option value="+65">&#127480;&#127468; +65</option>
-                <option value="+60">&#127474;&#127486; +60</option>
-                <option value="+92">&#127477;&#127472; +92</option>
-                <option value="+880">&#127463;&#127465; +880</option>
-                <option value="+94">&#127480;&#127473; +94</option>
-                <option value="+977">&#127475;&#127477; +977</option>
-                <option value="+49">&#127465;&#127466; +49</option>
-                <option value="+33">&#127467;&#127479; +33</option>
-                <option value="+81">&#127471;&#127477; +81</option>
-              </select>
-              <input type="tel" name="phone" placeholder="Phone number" style="flex:1;" required>
-            </div>
-          </div>
-          <div class="form-group"><label>Instagram Handle</label><div class="handle-wrap"><span class="handle-at">@</span><input type="text" name="instagram_handle" placeholder="yourhandle"></div></div>
-        </div>
-        <button type="submit" class="join-btn">Join the Waitlist &#8594;</button>
-        <div class="no-spam">No spam. Only product updates. Unsubscribe anytime.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo">ama<sup>ai</sup></span>
-  <span class="footer-text">Join the first AMA beta cohort.</span>
-  <a href="https://www.instagram.com/heyama.in/" target="_blank" class="footer-ig">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
-    Follow us on Instagram
-  </a>
-</footer>
-
-<!-- SUCCESS POPUP -->
-<div class="popup-overlay" id="successPopup">
-  <div class="popup-box">
-    <div class="popup-icon">&#127881;</div>
-    <div class="popup-title">You're in, <span id="popupName"></span>!</div>
-    <div class="popup-sub">AMA is launching with a small group of early creators.<br>We'll reach out when your spot opens.</div>
-    <div class="popup-box-inner">
-      <p>&#128073; Follow AMA on Instagram for updates &amp; early previews</p>
-      <a href="https://www.instagram.com/heyama.in/" target="_blank" class="popup-ig-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
-        Follow @heyama.in
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-kicker">Free · No login · 2–3 minutes</div>
+    <h1 class="hero-h1">
+      Your Instagram.<br>
+      <em>Finally working for you.</em>
+    </h1>
+    <p class="hero-sub">
+      AMA reads your real Instagram data and gives you a personalised weekly content plan — reel scripts, captions, hashtags — built for your account, not anyone else's.
+    </p>
+    <div class="hero-cta-wrap">
+      <a class="btn-primary" href="https://demo.heyama.in" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
+        Analyse My Instagram — Free
       </a>
     </div>
-    <div class="popup-bar"><div class="popup-bar-fill" id="popupBar"></div></div>
+    <p class="hero-proof">Free audit · No login · <span>Works for creators and businesses</span></p>
   </div>
-</div>
+</section>
+
+<!-- ═══ AUDIENCE TOGGLE ═══ -->
+<section id="audience">
+  <div class="wrap">
+
+    <!-- Toggle -->
+    <div class="audience-toggle-wrap">
+      <div class="audience-toggle">
+        <button class="aud-tab active" id="tab-creator" onclick="switchAud('creator')">🎬 For Creators</button>
+        <button class="aud-tab" id="tab-smb" onclick="switchAud('smb')">🏪 For Businesses</button>
+      </div>
+    </div>
+
+    <!-- ── CREATOR PANEL ── -->
+    <div class="aud-panel active" id="panel-creator">
+      <p class="aud-headline">Built for Indian creators who are serious about growth.</p>
+      <p class="aud-sub">You're posting consistently but not growing fast enough. AMA tells you exactly why — and what to post next week to fix it.</p>
+      <div class="niche-grid">
+        <div class="niche-card">
+          <div class="nc-icon">🍕</div>
+          <div class="nc-label">Food & Cooking</div>
+          <div class="nc-desc">Know which recipes go viral and why your audience saves them.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">💪</div>
+          <div class="nc-label">Fitness</div>
+          <div class="nc-desc">Grow beyond plateaus and build content that converts followers into clients.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">💄</div>
+          <div class="nc-label">Beauty & Fashion</div>
+          <div class="nc-desc">Unlock the content mix that attracts brand collabs and new followers.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">😂</div>
+          <div class="nc-label">Comedy & Entertainment</div>
+          <div class="nc-desc">Find your recurring characters and formats that people actually share.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">📈</div>
+          <div class="nc-label">Finance & Education</div>
+          <div class="nc-desc">Build authority and grow a loyal audience that trusts your advice.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">🌟</div>
+          <div class="nc-label">Lifestyle & Motivation</div>
+          <div class="nc-desc">Find the hooks that resonate and get shared widely.</div>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--text-3);font-size:13px;">Works best for creators with 5,000–150,000 followers who are actively posting and want faster growth.</p>
+    </div>
+
+    <!-- ── BUSINESS PANEL ── -->
+    <div class="aud-panel" id="panel-smb">
+      <p class="aud-headline">For Indian businesses using Instagram to get customers.</p>
+      <p class="aud-sub">Your Instagram should be driving bookings, walk-ins, and DM enquiries — not just likes. AMA shows you what's working and gives you a weekly content plan that converts.</p>
+      <div class="niche-grid">
+        <div class="niche-card">
+          <div class="nc-icon">✂️</div>
+          <div class="nc-label">Salon & Beauty</div>
+          <div class="nc-desc">Before/after content, client spotlights, and booking CTAs that actually drive appointments.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">☕</div>
+          <div class="nc-label">Café & Restaurant</div>
+          <div class="nc-desc">Food content that drives footfall, not just saves. Local discovery and seasonal menus.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">🏋️</div>
+          <div class="nc-label">Fitness Studio & Gym</div>
+          <div class="nc-desc">Transformation content and trial class offers that convert followers into members.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">🏥</div>
+          <div class="nc-label">Clinic & Wellness</div>
+          <div class="nc-desc">Trust-building content that brings new patients through the door.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">👩‍💼</div>
+          <div class="nc-label">Coach & Consultant</div>
+          <div class="nc-desc">Authority content and lead-generation posts that fill your calendar with discovery calls.</div>
+        </div>
+        <div class="niche-card">
+          <div class="nc-icon">🛍️</div>
+          <div class="nc-label">Boutique & Retail</div>
+          <div class="nc-desc">Product showcases, festival campaigns, and social proof that drives DM orders.</div>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--text-3);font-size:13px;">Works for any Indian business using Instagram to attract local customers — online or offline.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PROBLEM ═══ -->
+<section id="problem">
+  <div class="wrap">
+    <p class="section-kicker">The real problem</p>
+    <h2 class="section-h2">You're putting in the work.<br><em>But flying blind.</em></h2>
+    <p class="section-sub">Posting by gut feel with no idea what your audience actually responds to — that's what keeps growth slow.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="pc-icon">🔍</div>
+        <div class="pc-title">What's actually working</div>
+        <div class="pc-body">Which posts drive followers, saves, and DMs — and the exact pattern behind them that you can repeat.</div>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">⚠️</div>
+        <div class="pc-title">What's holding you back</div>
+        <div class="pc-body">The specific gaps in your content, timing, and consistency that are quietly costing you reach every week.</div>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">📅</div>
+        <div class="pc-title">What to post next</div>
+        <div class="pc-body">Not generic tips. A specific, ready-to-post plan for your account, your audience, and this week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how">
+  <div class="wrap">
+    <p class="section-kicker">How it works</p>
+    <h2 class="section-h2">Handle in.<br><em>Weekly plan out.</em></h2>
+    <p class="section-sub">You do step 1 and step 4. AMA handles everything in between — in about 2–3 minutes.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-who">You</div>
+        <div class="step-title">Enter your Instagram handle</div>
+        <div class="step-body">No login. No password. No permissions. Just type your handle and tap Analyse.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-who">AMA</div>
+        <div class="step-title">We audit your profile</div>
+        <div class="step-body">AMA scans your posts, reels, and engagement patterns — and finds what's working for your specific audience.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-who">AMA</div>
+        <div class="step-title">We build your weekly plan</div>
+        <div class="step-body">A day-by-day posting plan built from your real data — with reel scripts, captions, and hashtags, ready to post.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-who">You</div>
+        <div class="step-title">You post and grow</div>
+        <div class="step-body">Execute the plan. Come back next week for a fresh one — updated to what your audience responded to.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT YOU GET ═══ -->
+<section id="benefits">
+  <div class="wrap">
+    <p class="section-kicker">What you get</p>
+    <h2 class="section-h2">Not just data.<br><em>A complete growth system.</em></h2>
+    <p class="section-sub" style="margin-bottom:40px">Everything a professional social media manager would give you — without the ₹30,000/month price tag.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="b-icon">📊</div>
+        <div class="b-title">Deep Instagram Audit</div>
+        <div class="b-body">Engagement rate, content mix, posting consistency, best time, hashtag health, and engagement trend — all from your real account data.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">✨</div>
+        <div class="b-title">Your Standout Post</div>
+        <div class="b-body">AMA finds your single best-performing post, tells you exactly why it worked, and shows you how to make more like it.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">📅</div>
+        <div class="b-title">Weekly Content Plan</div>
+        <div class="b-body">A personalised posting schedule based on your audience and your natural rhythm — ready every week.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🎬</div>
+        <div class="b-title">Reel Scripts & Captions</div>
+        <div class="b-body">Every post comes with a ready-to-use reel script, 3 caption options, and hashtags. No blank page, ever.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">💰</div>
+        <div class="b-title">Growth & Earning Roadmap</div>
+        <div class="b-body">For creators: brand-deal readiness and earning paths. For businesses: how Instagram drives real customers to your door.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🇮🇳</div>
+        <div class="b-title">Built for India</div>
+        <div class="b-body">Indian creator benchmarks, niche-specific playbooks, seasonal calendar (Diwali, IPL, wedding season), and Indian audience context baked in.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+  <div class="wrap">
+    <p class="section-kicker" style="text-align:center">Pricing</p>
+    <div class="pricing-card">
+      <div class="pricing-badge">Pre-sale — First 50 spots</div>
+      <div class="pricing-amount"><span>₹</span>99</div>
+      <div class="pricing-period">per month · cancel anytime</div>
+      <p class="pricing-tagline">Try the free audit first. If it gives you real, useful insights — ₹99/month keeps the plan coming every week.</p>
+      <div class="pricing-perks">
+        <div class="pricing-perk">Weekly personalised content plan, refreshed every week</div>
+        <div class="pricing-perk">Full reel scripts, captions and hashtags for every post</div>
+        <div class="pricing-perk">Instagram audit with honest, data-backed insights</div>
+        <div class="pricing-perk">Built for your niche — creator or business</div>
+        <div class="pricing-perk">Peer Compare and Content Calendar rolling out soon — free for pre-sale members</div>
+      </div>
+      <a class="btn-primary" href="https://demo.heyama.in" target="_blank" style="width:100%;justify-content:center">
+        Start with a Free Audit →
+      </a>
+      <p class="pricing-note">₹99/month is the pre-sale price for the first 50 customers — locked in for you forever. Goes up after that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section id="cta">
+  <div class="wrap" style="text-align:center">
+    <h2 class="cta-h2">Your audience is waiting.<br><em>Stop guessing what they want.</em></h2>
+    <p class="cta-sub">Free audit. No login. Real insights from your real Instagram data. Takes 2–3 minutes.</p>
+    <a class="btn-primary" href="https://demo.heyama.in" target="_blank" style="margin:0 auto;display:inline-flex">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
+      Analyse My Instagram — Free
+    </a>
+    <p style="margin-top:14px;font-size:13px;color:var(--text-3)">No login · No credit card · Takes 2–3 minutes</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-logo">ama<sup>ai</sup></div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/heyama.in/" target="_blank">Instagram</a>
+      <a href="https://demo.heyama.in" target="_blank">Free Audit</a>
+    </div>
+    <div class="footer-right">© 2026 AMA · Made in India 🇮🇳</div>
+  </div>
+</footer>
 
 <script>
-const form = document.querySelector('form[action*="formspree"]');
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const data = new FormData(form);
-  const name = data.get('name') || 'you';
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+  function switchAud(tab) {
+    ['creator','smb'].forEach(t => {
+      document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+      document.getElementById('panel-' + t).classList.toggle('active', t === tab);
     });
-    if (res.ok) {
-      document.getElementById('popupName').textContent = name.split(' ')[0];
-      const overlay = document.getElementById('successPopup');
-      const oldBar = document.getElementById('popupBar');
-      const newBar = oldBar.cloneNode(true);
-      oldBar.parentNode.replaceChild(newBar, oldBar);
-      overlay.classList.add('show');
-      form.reset();
-      setTimeout(() => overlay.classList.remove('show'), 5000);
-    }
-  } catch(err) { console.error(err); }
-});
-document.getElementById('successPopup').addEventListener('click', function(e) {
-  if (e.target === this) this.classList.remove('show');
-});
+  }
 </script>
 
 </body>
