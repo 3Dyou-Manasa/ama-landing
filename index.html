@@ -377,6 +377,26 @@
 </head>
 <body>
 
+<!-- ═══ LIVE IN BANNER ═══ -->
+<section style="padding:20px 0;background:rgba(124,58,237,0.07);border-bottom:1px solid var(--border-soft)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--purple-light)">Now live in</span>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <span style="background:rgba(255,255,255,0.07);border:1px solid var(--border-soft);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600">India</span>
+        <span style="background:rgba(255,255,255,0.07);border:1px solid var(--border-soft);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600">United Kingdom</span>
+        <span style="background:rgba(255,255,255,0.07);border:1px solid var(--border-soft);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600">Nigeria</span>
+        <span style="background:rgba(255,255,255,0.07);border:1px solid var(--border-soft);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600">UAE / Dubai</span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--text-3)">From another country?</span>
+      <a href="#waitlist-other" onclick="document.getElementById('waitlist-other').scrollIntoView({behavior:'smooth'})"
+         style="font-size:13px;color:var(--purple-light);font-weight:600;text-decoration:underline">Join the waitlist →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ NAV ═══ -->
 <nav>
   <div class="wrap nav-inner">
@@ -611,24 +631,107 @@
 <section id="pricing">
   <div class="wrap">
     <p class="section-kicker" style="text-align:center">Pricing</p>
-    <div class="pricing-card">
-      <div class="pricing-badge">Pre-sale — First 50 spots</div>
-      <div class="pricing-amount"><span>₹</span>99</div>
-      <div class="pricing-period">per month · cancel anytime</div>
-      <p class="pricing-tagline">Try the free audit first. If it gives you real, useful insights — ₹99/month keeps the plan coming every week.</p>
-      <div class="pricing-perks">
-        <div class="pricing-perk">Weekly personalised content plan, refreshed every week</div>
-        <div class="pricing-perk">Full reel scripts, captions and hashtags for every post</div>
-        <div class="pricing-perk">Instagram audit with honest, data-backed insights</div>
-        <div class="pricing-perk">Built for your niche — creator or business</div>
-        <div class="pricing-perk">Peer Compare and Content Calendar rolling out soon — free for pre-sale members</div>
+    <h2 class="section-h2" style="text-align:center;margin-bottom:8px">AMA is live in 4 countries</h2>
+    <p style="text-align:center;color:var(--text-2);font-size:16px;margin-bottom:36px">
+      Start with a free audit — no login, no credit card. Works for creators and businesses.
+    </p>
+
+    <!-- 4 country flags -->
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:48px">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px">
+        <div style="font-size:22px;font-weight:900;color:var(--purple-light);margin-bottom:6px">IN</div>
+        <div style="font-weight:700;font-size:14px">India</div>
+        <div style="font-size:12px;color:var(--green);font-weight:600;margin-top:4px">✓ Live</div>
       </div>
-      <a class="btn-primary" href="https://demo.heyama.in" target="_blank" style="width:100%;justify-content:center">
-        Start with a Free Audit →
-      </a>
-      <p class="pricing-note">₹99/month is the pre-sale price for the first 50 customers — locked in for you forever. Goes up after that.</p>
-      <p class="pricing-note" style="margin-top:8px">Outside India? Email us at <a href="mailto:hello@heyama.in" style="color:var(--purple-light)">hello@heyama.in</a> — international pricing coming soon.</p>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px">
+        <div style="font-size:22px;font-weight:900;color:var(--purple-light);margin-bottom:6px">UK</div>
+        <div style="font-weight:700;font-size:14px">United Kingdom</div>
+        <div style="font-size:12px;color:var(--green);font-weight:600;margin-top:4px">✓ Live</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px">
+        <div style="font-size:22px;font-weight:900;color:var(--purple-light);margin-bottom:6px">NG</div>
+        <div style="font-weight:700;font-size:14px">Nigeria</div>
+        <div style="font-size:12px;color:var(--green);font-weight:600;margin-top:4px">✓ Live</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 22px;text-align:center;min-width:120px">
+        <div style="font-size:22px;font-weight:900;color:var(--purple-light);margin-bottom:6px">UAE</div>
+        <div style="font-weight:700;font-size:14px">UAE / Dubai</div>
+        <div style="font-size:12px;color:var(--green);font-weight:600;margin-top:4px">✓ Live</div>
+      </div>
     </div>
+
+    <!-- Two pricing columns -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto">
+
+      <!-- India pricing -->
+      <div class="pricing-card" style="text-align:left">
+        <div style="font-size:13px;font-weight:700;color:var(--text-3);margin-bottom:6px">INDIA</div>
+        <div class="pricing-badge" style="margin-bottom:14px">Pre-sale — First 50 spots</div>
+        <div class="pricing-amount" style="margin-bottom:4px"><span>₹</span>99</div>
+        <div class="pricing-period">per month · cancel anytime</div>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin:16px 0 20px">
+          Try the free audit first. If it gives you real, useful insights — ₹99/month keeps your plan coming every week.
+        </p>
+        <div class="pricing-perks">
+          <div class="pricing-perk">Weekly personalised content plan, refreshed every week</div>
+          <div class="pricing-perk">Full reel scripts, captions and hashtags for every post</div>
+          <div class="pricing-perk">Instagram audit with honest, data-backed insights</div>
+          <div class="pricing-perk">Peer Compare and Calendar rolling out soon — free for pre-sale members</div>
+        </div>
+        <a class="btn-primary" href="https://demo.heyama.in" target="_blank"
+           style="display:flex;justify-content:center;text-decoration:none">
+          Start with a Free Audit →
+        </a>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;text-align:center">
+          ₹99 pre-sale price is locked in forever for our first 50 customers.
+        </p>
+      </div>
+
+      <!-- UK / Nigeria / UAE pricing -->
+      <div class="pricing-card" style="text-align:left;background:rgba(255,255,255,0.03)">
+        <div style="font-size:13px;font-weight:700;color:var(--text-3);margin-bottom:6px">UK · NIGERIA · UAE</div>
+        <div style="display:inline-block;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fcd34d;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px">
+          Launch pricing coming soon
+        </div>
+        <div style="font-size:36px;font-weight:900;letter-spacing:-2px;margin-bottom:4px;color:var(--text-2)">—</div>
+        <div class="pricing-period">pricing to be announced</div>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin:16px 0 20px">
+          Live now. Free to use while local pricing is being set up.
+          First 50 users in each country get founding prices — locked in forever.
+        </p>
+        <div class="pricing-perks">
+          <div class="pricing-perk">Free audit now — no login, no card, no expiry</div>
+          <div class="pricing-perk">Full weekly content plan for your market</div>
+          <div class="pricing-perk">Local market intelligence (brands, seasonal, benchmarks)</div>
+          <div class="pricing-perk">Founding price locked for first 50 in each country</div>
+        </div>
+        <a class="btn-primary" href="https://demo.heyama.in" target="_blank"
+           style="display:flex;justify-content:center;text-decoration:none;background:rgba(255,255,255,0.08);color:var(--text)">
+          Start Free — No Card Needed →
+        </a>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;text-align:center">
+          We'll email you when pricing goes live in your country.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Other countries -->
+    <div style="max-width:560px;margin:28px auto 0;text-align:center;padding:20px;background:rgba(255,255,255,0.03);border:1px solid var(--border-soft);border-radius:14px">
+      <div style="font-size:14px;font-weight:700;margin-bottom:8px">From another country?</div>
+      <p style="font-size:13px;color:var(--text-2);line-height:1.55;margin-bottom:12px">
+        We're actively expanding. Email us at
+        <a href="mailto:hello@heyama.in" style="color:var(--purple-light);font-weight:600">hello@heyama.in</a>
+        — tell us your country and whether you're a creator or a business,
+        and we'll reach out the moment we launch in your market.
+      </p>
+      <a href="#waitlist-other"
+         onclick="document.getElementById('waitlist-other').scrollIntoView({behavior:'smooth'})"
+         style="font-size:13px;color:var(--purple-light);font-weight:600;text-decoration:underline">
+        Or join the waitlist below →
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -642,6 +745,36 @@
       Analyse My Instagram — Free
     </a>
     <p style="margin-top:14px;font-size:13px;color:var(--text-3)">No login · No credit card · Takes 2–3 minutes</p>
+  </div>
+</section>
+
+<!-- ═══ INTERNATIONAL WAITLIST ═══ -->
+<section id="waitlist-other" style="background:var(--bg-card);border-top:1px solid var(--border-soft)">
+  <div class="wrap" style="text-align:center">
+    <p class="section-kicker">Coming soon to your country</p>
+    <h2 class="section-h2" style="margin-bottom:14px">AMA is expanding globally.</h2>
+    <p class="section-sub" style="margin:0 auto 36px">
+      We're building deep, local intelligence for new markets — real knowledge of what works
+      for creators and businesses in your country, not generic advice.
+      Tell us where you're from and we'll reach out the moment we launch there.
+    </p>
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:500px;margin:0 auto;text-align:left">
+      <div style="margin-bottom:16px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);margin-bottom:8px">Your country</div>
+        <input type="text" id="wl-country" placeholder="e.g. Brazil, France, South Korea…"
+               style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;padding:12px 16px;font-family:'Inter',sans-serif;outline:none;box-sizing:border-box">
+      </div>
+      <div style="margin-bottom:20px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);margin-bottom:8px">Your email</div>
+        <input type="email" id="wl-email" placeholder="you@example.com"
+               style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;padding:12px 16px;font-family:'Inter',sans-serif;outline:none;box-sizing:border-box">
+      </div>
+      <button onclick="joinWaitlist()"
+              style="width:100%;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;padding:14px;cursor:pointer;font-family:'Inter',sans-serif">
+        Join the waitlist →
+      </button>
+      <div id="wl-msg" style="font-size:13px;margin-top:12px;min-height:18px;text-align:center"></div>
+    </div>
   </div>
 </section>
 
@@ -663,6 +796,24 @@
       document.getElementById('tab-' + t).classList.toggle('active', t === tab);
       document.getElementById('panel-' + t).classList.toggle('active', t === tab);
     });
+  }
+
+  async function joinWaitlist() {
+    const country = document.getElementById('wl-country').value.trim();
+    const email = document.getElementById('wl-email').value.trim().toLowerCase();
+    const msg = document.getElementById('wl-msg');
+    if (!country) { msg.style.color='#fca5a5'; msg.textContent='Please enter your country.'; return; }
+    if (!email || !email.includes('@')) { msg.style.color='#fca5a5'; msg.textContent='Please enter a valid email.'; return; }
+    try {
+      await fetch('https://ama-backend-api.onrender.com/waitlist', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({email, country, user_type:'creator'})
+      });
+    } catch(e) {}
+    msg.style.color='#6ee7b7';
+    msg.textContent="✓ You're on the list! We'll email you when AMA launches in " + country + ".";
+    document.getElementById('wl-country').value='';
+    document.getElementById('wl-email').value='';
   }
 </script>
 
