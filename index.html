@@ -416,11 +416,11 @@
   <div class="wrap">
     <div class="hero-kicker">Free · No login · 2–3 minutes</div>
     <h1 class="hero-h1">
-      Your Instagram.<br>
-      <em>Finally working for you.</em>
+      Instagram that brings<br>
+      <em>customers in.</em> Not just likes.
     </h1>
     <p class="hero-sub">
-      AMA reads your real Instagram data and gives you a personalised weekly content plan — reel scripts, captions, hashtags, and ready-to-post carousel images made from your own photos — built for your account, not anyone else's.
+      AMA reads your real Instagram data, shows you what's actually working, and hands you the exact posts to bring people through your door — captions, hashtags, and ready-to-post images made from your own photos. Built for local businesses.
     </p>
     <div class="hero-cta-wrap">
       <a class="btn-primary" href="https://demo.heyama.in" target="_blank">
@@ -428,7 +428,7 @@
         Analyse My Instagram — Free
       </a>
     </div>
-    <p class="hero-proof">Free audit · No login · <span>For creators and businesses — live in 4 countries</span></p>
+    <p class="hero-proof">Free audit · No login · <span>Salons · cafés · clinics · studios — live in 4 countries</span></p>
   </div>
 </section>
 
@@ -439,13 +439,13 @@
     <!-- Toggle -->
     <div class="audience-toggle-wrap">
       <div class="audience-toggle">
-        <button class="aud-tab active" id="tab-creator" onclick="switchAud('creator')">🎬 For Creators</button>
-        <button class="aud-tab" id="tab-smb" onclick="switchAud('smb')">🏪 For Businesses</button>
+        <button class="aud-tab active" id="tab-smb" onclick="switchAud('smb')">🏪 For Businesses</button>
+        <button class="aud-tab" id="tab-creator" onclick="switchAud('creator')">🎬 For Creators</button>
       </div>
     </div>
 
     <!-- ── CREATOR PANEL ── -->
-    <div class="aud-panel active" id="panel-creator">
+    <div class="aud-panel" id="panel-creator">
       <p class="aud-headline">Built for creators who are serious about growth.</p>
       <p class="aud-sub">You're posting consistently but not growing fast enough. AMA tells you exactly why — and what to post next week to fix it.</p>
       <div class="niche-grid">
@@ -484,7 +484,7 @@
     </div>
 
     <!-- ── BUSINESS PANEL ── -->
-    <div class="aud-panel" id="panel-smb">
+    <div class="aud-panel active" id="panel-smb">
       <p class="aud-headline">For businesses using Instagram to get customers.</p>
       <p class="aud-sub">Your Instagram should be driving bookings, walk-ins, and DM enquiries — not just likes. AMA shows you what's working and gives you a weekly content plan that converts.</p>
       <div class="niche-grid">
@@ -638,7 +638,7 @@
     <p class="section-kicker" style="text-align:center">Pricing</p>
     <h2 class="section-h2" style="text-align:center;margin-bottom:8px">Free while we're in beta</h2>
     <p style="text-align:center;color:var(--text-2);font-size:16px;margin-bottom:36px">
-      Live in 4 countries, free to use right now — no login, no credit card. Works for creators and businesses.
+      Live in 4 countries, free to use right now — no login, no credit card. Works for local businesses and creators.
     </p>
 
     <!-- 4 country flags -->
@@ -699,7 +699,7 @@
       <p style="font-size:13px;color:var(--text-2);line-height:1.55;margin-bottom:12px">
         We're actively expanding. Email us at
         <a href="mailto:hello@heyama.in" style="color:var(--purple-light);font-weight:600">hello@heyama.in</a>
-        — tell us your country and whether you're a creator or a business,
+        — tell us your country and whether you're a business or a creator,
         and we'll reach out the moment we launch in your market.
       </p>
       <a href="#waitlist-other"
@@ -732,7 +732,7 @@
     <h2 class="section-h2" style="margin-bottom:14px">AMA is expanding globally.</h2>
     <p class="section-sub" style="margin:0 auto 36px">
       We're building deep, local intelligence for new markets — real knowledge of what works
-      for creators and businesses in your country, not generic advice.
+      for local businesses and creators in your country, not generic advice.
       Tell us where you're from and we'll reach out the moment we launch there.
     </p>
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:500px;margin:0 auto;text-align:left">
@@ -784,7 +784,7 @@
     try {
       await fetch('https://ama-backend-api.onrender.com/waitlist', {
         method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({email, country, user_type:'creator'})
+        body: JSON.stringify({email, country, user_type:'business'})
       });
     } catch(e) {}
     msg.style.color='#6ee7b7';
