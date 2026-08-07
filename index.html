@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMA — Your Instagram Growth Assistant</title>
-  <meta name="description" content="AMA analyses your Instagram and gives you a personalised weekly content plan with local market intelligence. Live in India, the UK, Nigeria and the UAE. Free audit, no login.">
+  <title>AMA — Your Independent Instagram Strategist</title>
+  <meta name="description" content="AMA analyses your real Instagram, shows you what is working, what is not, and exactly what should be posted next week. Use the plan yourself or hand it to your social media person. Live in India, the UK, Nigeria and the UAE. Free audit, no login.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%237c3aed'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='58' font-weight='900' fill='white' text-anchor='middle'>a</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,6 +201,20 @@
     .niche-card .nc-label { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
     .niche-card .nc-desc { font-size: 12px; color: var(--text-3); line-height: 1.5; }
 
+    /* ── TWO WAYS TO USE AMA ───────────────────────────────── */
+    .use-paths { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin:34px 0 42px; }
+    .use-path { background:var(--bg-card); border:1px solid var(--border); border-radius:18px; padding:28px; position:relative; overflow:hidden; }
+    .use-path::before { content:''; position:absolute; width:220px; height:220px; border-radius:50%; right:-110px; top:-120px; background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%); pointer-events:none; }
+    .use-path-icon { font-size:30px; margin-bottom:14px; }
+    .use-path-label { display:inline-block; color:var(--purple-light); background:rgba(124,58,237,.12); border:1px solid rgba(124,58,237,.25); border-radius:20px; padding:5px 10px; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+    .use-path h3 { font-size:22px; line-height:1.25; letter-spacing:-.5px; margin-bottom:12px; }
+    .use-path p { color:var(--text-2); font-size:14px; line-height:1.65; margin-bottom:18px; }
+    .use-path ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .use-path li { color:var(--text-2); font-size:13px; line-height:1.5; display:flex; gap:9px; align-items:flex-start; }
+    .use-path li::before { content:'✓'; color:var(--green); font-weight:800; flex:0 0 auto; }
+    .handoff-strip { margin:0 0 44px; padding:18px 22px; border:1px solid rgba(236,72,153,.2); background:linear-gradient(135deg,rgba(124,58,237,.10),rgba(236,72,153,.07)); border-radius:14px; text-align:center; color:var(--text-2); font-size:14px; line-height:1.6; }
+    .handoff-strip strong { color:var(--text); }
+
     /* ── PROBLEM SECTION ────────────────────────────────────── */
     #problem { background: var(--bg); }
     .section-kicker {
@@ -366,6 +380,7 @@
       section { padding: 44px 0; }
       #audience { padding: 0 0 32px; }
       .nav-links { display: none; }
+      .use-paths { grid-template-columns: 1fr; }
       .hero-h1 { letter-spacing: -1.5px; }
       .steps { grid-template-columns: 1fr; }
       .step:not(:last-child)::after { content: '↓'; right: auto; left: 28px; top: auto; bottom: -16px; }
@@ -414,124 +429,69 @@
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="wrap">
-    <div class="hero-kicker">Free · No login · 3–4 minutes</div>
-    <h1 class="hero-h1">
-      Instagram that brings<br>
-      <em>customers in.</em> Not just likes.
-    </h1>
-    <p class="hero-sub">
-      AMA reads your real Instagram data, shows you what's actually working, and hands you the exact posts to bring in customers and orders — captions, hashtags, and ready-to-post images made from your own photos. Built for local businesses and sellers.
-    </p>
+    <div class="hero-kicker">Your independent Instagram strategist</div>
+    <h1 class="hero-h1">Know what's working.<br>Know <em>what to post next.</em></h1>
+    <p class="hero-sub" style="max-width:680px">AMA analyses your real Instagram and turns it into a clear weekly plan — what to post, what to say, and what to fix. <strong style="color:var(--text)">Post it yourself or hand the plan straight to your social media person.</strong></p>
     <div class="hero-cta-wrap">
       <a class="btn-primary" href="https://demo.heyama.in" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
-        Analyse My Instagram — Free
+        See What AMA Says — Free
       </a>
     </div>
-    <p class="hero-proof">Free audit · No login · <span>Salons · cafés · clinics · studios — live in 4 countries</span></p>
+    <p class="hero-proof">Free beta · No login · No password · <span>Takes about 3–4 minutes</span></p>
   </div>
 </section>
 
-<!-- ═══ AUDIENCE TOGGLE ═══ -->
+<!-- ═══ WHO IT'S FOR ═══ -->
 <section id="audience">
   <div class="wrap">
+    <p class="section-kicker" style="text-align:center">Two ways to use AMA</p>
+    <h2 class="section-h2" style="text-align:center;margin-bottom:14px">Whether you run Instagram yourself<br>or someone runs it for you.</h2>
+    <p class="aud-sub" style="max-width:720px;margin-bottom:24px">AMA sits above the day-to-day execution. It gives you an independent view of your account and a specific weekly plan based on your real Instagram data.</p>
 
-    <!-- Toggle -->
-    <div class="audience-toggle-wrap">
-      <div class="audience-toggle">
-        <button class="aud-tab active" id="tab-smb" onclick="switchAud('smb')">🏪 For Businesses</button>
-        <button class="aud-tab" id="tab-creator" onclick="switchAud('creator')">🎬 For Creators</button>
+    <div class="use-paths">
+      <div class="use-path">
+        <div class="use-path-icon">📱</div>
+        <div class="use-path-label">I manage Instagram myself</div>
+        <h3>Stop starting from a blank page every week.</h3>
+        <p>AMA decides what deserves your time, then gives you the actual content plan to execute.</p>
+        <ul>
+          <li>Know which posts and formats are actually working.</li>
+          <li>Get a day-by-day plan for what to post next.</li>
+          <li>Use ready captions, Reel scripts, hashtags and carousel slides.</li>
+          <li>Spend less time planning and more time running your business.</li>
+        </ul>
+      </div>
+
+      <div class="use-path">
+        <div class="use-path-icon">🤝</div>
+        <div class="use-path-label">Someone manages Instagram for me</div>
+        <h3>Know what your agency or social media person should be doing.</h3>
+        <p>AMA gives you an independent strategy before the content gets made, so you are not approving posts blindly.</p>
+        <ul>
+          <li>See what is working and what your account is missing.</li>
+          <li>Know the priorities your social media person should focus on.</li>
+          <li>Forward the weekly plan, scripts and content ideas for execution.</li>
+          <li>Have a better, more informed conversation with your agency.</li>
+        </ul>
       </div>
     </div>
 
-    <!-- ── CREATOR PANEL ── -->
-    <div class="aud-panel" id="panel-creator">
-      <p class="aud-headline">Built for creators who are serious about growth.</p>
-      <p class="aud-sub">You're posting consistently but not growing fast enough. AMA tells you exactly why — and what to post next week to fix it.</p>
-      <div class="niche-grid">
-        <div class="niche-card">
-          <div class="nc-icon">🍕</div>
-          <div class="nc-label">Food & Cooking</div>
-          <div class="nc-desc">Know which recipes go viral and why your audience saves them.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">💪</div>
-          <div class="nc-label">Fitness</div>
-          <div class="nc-desc">Grow beyond plateaus and build content that converts followers into clients.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">💄</div>
-          <div class="nc-label">Beauty & Fashion</div>
-          <div class="nc-desc">Unlock the content mix that attracts brand collabs and new followers.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">😂</div>
-          <div class="nc-label">Comedy</div>
-          <div class="nc-desc">Find your recurring characters and formats that people actually share.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🎬</div>
-          <div class="nc-label">Film & Entertainment</div>
-          <div class="nc-desc">Reactions, reviews and takes that ride what everyone's watching right now.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">📈</div>
-          <div class="nc-label">Finance & Education</div>
-          <div class="nc-desc">Build authority and grow a loyal audience that trusts your advice.</div>
-        </div>
-      </div>
-      <p style="text-align:center;color:var(--text-3);font-size:13px;">Food, fitness, beauty, fashion, comedy, film, music, gaming, tech, finance, travel, lifestyle and more — with local playbooks tuned to your country. Whatever your size, if you're posting and want to grow, AMA works for you.</p>
-    </div>
+    <div class="handoff-strip"><strong>AMA does not ask you to replace your agency.</strong> It gives you the strategy and direction; you decide who executes it.</div>
 
-    <!-- ── BUSINESS PANEL ── -->
-    <div class="aud-panel active" id="panel-smb">
-      <p class="aud-headline">For businesses using Instagram to get customers.</p>
-      <p class="aud-sub">Your Instagram should be driving bookings, walk-ins, and DM enquiries — not just likes. AMA shows you what's working and gives you a weekly content plan that converts.</p>
-      <div class="niche-grid">
-        <div class="niche-card">
-          <div class="nc-icon">✂️</div>
-          <div class="nc-label">Salon & Beauty</div>
-          <div class="nc-desc">Before/after content, client spotlights, and booking CTAs that actually drive appointments.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">☕</div>
-          <div class="nc-label">Restaurant, Café & Cloud Kitchen</div>
-          <div class="nc-desc">Food content that drives footfall and orders — not just saves. Local discovery and delivery.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🏋️</div>
-          <div class="nc-label">Fitness Studio & Gym</div>
-          <div class="nc-desc">Transformation content and trial class offers that convert followers into members.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🏥</div>
-          <div class="nc-label">Clinic & Wellness</div>
-          <div class="nc-desc">Trust-building content that brings new patients through the door.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">👩‍💼</div>
-          <div class="nc-label">Coach & Consultant</div>
-          <div class="nc-desc">Authority content and lead-generation posts that fill your calendar with discovery calls.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🛍️</div>
-          <div class="nc-label">Boutique & Retail</div>
-          <div class="nc-desc">Product showcases, festival campaigns, and social proof that drives DM orders.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🧴</div>
-          <div class="nc-label">Product Brand & Online Seller</div>
-          <div class="nc-desc">Selling shampoo, snacks, candles, cosmetics? Content that turns browsers into orders — DM to order, shop link, restock drops.</div>
-        </div>
-        <div class="niche-card">
-          <div class="nc-icon">🔌</div>
-          <div class="nc-label">Shop (Hardware, Electrical & More)</div>
-          <div class="nc-desc">Hardware, lights, plumbing, general store — content that makes people think of your shop the moment they need what you stock.</div>
-        </div>
-      </div>
-      <p style="text-align:center;color:var(--text-3);font-size:13px;">Salons, restaurants, clinics, boutiques, coaches, home-food businesses, product brands, online sellers, hardware &amp; retail shops, tailors, real estate and more — the exact categories that fit your country. Works for any local business or seller using Instagram to bring in customers and orders.</p>
+    <p class="aud-headline" style="font-size:clamp(20px,3vw,30px)">Built for local businesses that use Instagram to get customers.</p>
+    <p class="aud-sub">Bookings, walk-ins, enquiries and orders — not just likes.</p>
+    <div class="niche-grid">
+      <div class="niche-card"><div class="nc-icon">✂️</div><div class="nc-label">Salon & Beauty</div><div class="nc-desc">Transformations, client education and booking-focused content.</div></div>
+      <div class="niche-card"><div class="nc-icon">☕</div><div class="nc-label">Restaurant, Café & Food</div><div class="nc-desc">Content that helps drive local discovery, footfall and orders.</div></div>
+      <div class="niche-card"><div class="nc-icon">🏋️</div><div class="nc-label">Fitness Studio & Gym</div><div class="nc-desc">Trust, transformation and trial-focused content.</div></div>
+      <div class="niche-card"><div class="nc-icon">🏥</div><div class="nc-label">Clinic & Wellness</div><div class="nc-desc">Educational, trust-building content for patient enquiries.</div></div>
+      <div class="niche-card"><div class="nc-icon">👩‍💼</div><div class="nc-label">Coach & Consultant</div><div class="nc-desc">Authority content and lead-generation ideas.</div></div>
+      <div class="niche-card"><div class="nc-icon">🛍️</div><div class="nc-label">Boutique & Retail</div><div class="nc-desc">Product showcases, seasonal campaigns and social proof.</div></div>
+      <div class="niche-card"><div class="nc-icon">🧴</div><div class="nc-label">Product Brand & Online Seller</div><div class="nc-desc">Product education, launches, restocks and order-focused posts.</div></div>
+      <div class="niche-card"><div class="nc-icon">🏠</div><div class="nc-label">Real Estate, Services & More</div><div class="nc-desc">Local, category-specific content built around how your business wins customers.</div></div>
     </div>
-
+    <p style="text-align:center;color:var(--text-3);font-size:13px;">Salons, restaurants, clinics, boutiques, coaches, home-food businesses, product brands, online sellers, retail shops, tailors, real estate and more — with local intelligence for your market.</p>
   </div>
 </section>
 
@@ -539,24 +499,12 @@
 <section id="problem">
   <div class="wrap">
     <p class="section-kicker">The real problem</p>
-    <h2 class="section-h2">You're putting in the work.<br><em>But flying blind.</em></h2>
-    <p class="section-sub">Posting by gut feel with no idea what your audience actually responds to — that's what keeps growth slow.</p>
+    <h2 class="section-h2">Someone is posting.<br><em>But who is deciding what should be posted?</em></h2>
+    <p class="section-sub" style="max-width:650px">Whether you manage Instagram yourself or outsource it, the hard part is the same: knowing what is worth doing next. AMA gives you that direction from your own account data.</p>
     <div class="problem-grid">
-      <div class="problem-card">
-        <div class="pc-icon">🔍</div>
-        <div class="pc-title">What's actually working</div>
-        <div class="pc-body">Which posts drive followers, saves, and DMs — and the exact pattern behind them that you can repeat.</div>
-      </div>
-      <div class="problem-card">
-        <div class="pc-icon">⚠️</div>
-        <div class="pc-title">What's holding you back</div>
-        <div class="pc-body">The specific gaps in your content, timing, and consistency that are quietly costing you reach every week.</div>
-      </div>
-      <div class="problem-card">
-        <div class="pc-icon">📅</div>
-        <div class="pc-title">What to post next</div>
-        <div class="pc-body">Not generic tips. A specific, ready-to-post plan for your account, your audience, and this week.</div>
-      </div>
+      <div class="problem-card"><div class="pc-icon">🔍</div><div class="pc-title">Know what's actually working</div><div class="pc-body">See the posts, formats and patterns your audience is responding to — so you can repeat what deserves more attention.</div></div>
+      <div class="problem-card"><div class="pc-icon">⚠️</div><div class="pc-title">Know what's being missed</div><div class="pc-body">AMA surfaces the gaps in content, consistency and execution that are easy to overlook when you are too close to the account.</div></div>
+      <div class="problem-card"><div class="pc-icon">📅</div><div class="pc-title">Know exactly what should happen next</div><div class="pc-body">Get a specific weekly plan you can execute yourself or send straight to the person managing Instagram for you.</div></div>
     </div>
   </div>
 </section>
@@ -565,33 +513,13 @@
 <section id="how">
   <div class="wrap">
     <p class="section-kicker">How it works</p>
-    <h2 class="section-h2">Handle in.<br><em>Weekly plan out.</em></h2>
-    <p class="section-sub">You do step 1 and step 4. AMA handles everything in between — in about 3–4 minutes.</p>
+    <h2 class="section-h2">Your handle in.<br><em>Your next week's direction out.</em></h2>
+    <p class="section-sub">AMA handles the analysis and planning in about 3–4 minutes. You choose who executes it.</p>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-who">You</div>
-        <div class="step-title">Enter your Instagram handle</div>
-        <div class="step-body">No login. No password. No permissions. Just type your handle and tap Analyse.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-who">AMA</div>
-        <div class="step-title">We audit your profile</div>
-        <div class="step-body">AMA scans your posts, reels, and engagement patterns — and finds what's working for your specific audience.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-who">AMA</div>
-        <div class="step-title">We build your weekly plan — and your images</div>
-        <div class="step-body">A day-by-day posting plan built from your real data — reel scripts, captions, and hashtags. For photo and carousel posts, tap <strong>Make this post</strong> and AMA generates ready-to-post slides in your brand colours, laid over your own Instagram photos.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-who">You</div>
-        <div class="step-title">You post and grow</div>
-        <div class="step-body">Execute the plan. Come back next week for a fresh one — updated to what your audience responded to.</div>
-      </div>
+      <div class="step"><div class="step-num">1</div><div class="step-who">You</div><div class="step-title">Enter your Instagram handle</div><div class="step-body">No login. No password. No permissions. Just enter the public business account you want AMA to analyse.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-who">AMA</div><div class="step-title">AMA audits the account</div><div class="step-body">It studies your posts, Reels and engagement patterns to find what is working, what is missing and where the opportunity is.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-who">AMA</div><div class="step-title">AMA builds the weekly plan</div><div class="step-body">You get specific post ideas, Reel scripts, captions, hashtags and ready-to-post carousel graphics — based on your business and your account.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-who">You choose</div><div class="step-title">Post it yourself — or hand it off</div><div class="step-body">Use the plan yourself, or send the direction to your agency, freelancer or social media person and let them execute it.</div></div>
     </div>
   </div>
 </section>
@@ -600,43 +528,48 @@
 <section id="benefits">
   <div class="wrap">
     <p class="section-kicker">What you get</p>
-    <h2 class="section-h2">Not just data.<br><em>A complete growth system.</em></h2>
-    <p class="section-sub" style="margin-bottom:40px">Everything a professional social media manager would give you — delivered automatically every week.</p>
+    <h2 class="section-h2">Not another posting tool.<br><em>A decision layer for your Instagram.</em></h2>
+    <p class="section-sub" style="margin-bottom:40px;max-width:650px">AMA helps you decide what should happen before anyone spends time creating, shooting or posting the content.</p>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="b-icon">📊</div>
-        <div class="b-title">Deep Instagram Audit</div>
-        <div class="b-body">Photo and reel engagement, content mix, posting consistency, best time to post, and hashtag health — all from your real account data.</div>
+        <div class="b-title">Independent Instagram Audit</div>
+        <div class="b-body">Understand posting consistency, engagement patterns, content mix, best-performing formats and account health from your real public data.</div>
       </div>
       <div class="benefit-card">
         <div class="b-icon">✨</div>
-        <div class="b-title">Your Standout Post</div>
-        <div class="b-body">AMA finds your single best-performing post, tells you exactly why it worked, and shows you how to make more like it.</div>
+        <div class="b-title">What to Repeat — and What to Fix</div>
+        <div class="b-body">AMA identifies the patterns behind your stronger posts and the gaps that are quietly holding the account back.</div>
       </div>
       <div class="benefit-card">
         <div class="b-icon">📅</div>
-        <div class="b-title">Weekly Content Plan</div>
-        <div class="b-body">A personalised posting schedule based on your audience and your natural rhythm — ready every week.</div>
+        <div class="b-title">A Specific Weekly Content Plan</div>
+        <div class="b-body">Not generic tips. A day-by-day plan for your business, your current account and the week ahead.</div>
       </div>
       <div class="benefit-card">
         <div class="b-icon">🎬</div>
         <div class="b-title">Scripts, Captions & Hashtags</div>
-        <div class="b-body">Every post comes with a ready-to-use script, 3 caption options, and hashtags. No blank page, ever. No time to film Reels? Tell AMA, and your whole plan becomes photo and carousel posts you can actually make.</div>
+        <div class="b-body">Each recommended post comes with the copy and creative direction needed to move from idea to execution faster.</div>
       </div>
       <div class="benefit-card">
         <div class="b-icon">🎨</div>
-        <div class="b-title">Ready-to-Post Images</div>
-        <div class="b-body">For photo and carousel posts, AMA generates the actual slides — over your own Instagram photos or a clean brand background, sized for the feed. Upload your own image and position it exactly how you want. Download and post. No designer, no Canva.</div>
+        <div class="b-title">Ready-to-Post Carousel Graphics</div>
+        <div class="b-body">For photo and carousel posts, AMA can create feed-ready slides using your photos or brand background — no blank Canva file to start from.</div>
       </div>
       <div class="benefit-card">
-        <div class="b-icon">💰</div>
-        <div class="b-title">Growth & Earning Roadmap</div>
-        <div class="b-body">For creators: brand-deal readiness and earning paths. For businesses: content built to turn followers into walk-ins, bookings, and enquiries.</div>
+        <div class="b-icon">🤝</div>
+        <div class="b-title">A Plan You Can Hand Off</div>
+        <div class="b-body">Already outsource Instagram? Use AMA's plan as the brief. Your agency or social media person handles production; you stay clear on the strategy.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">📲</div>
+        <div class="b-title">Faster Posting When You Do It Yourself</div>
+        <div class="b-body">AMA prepares the plan, captions, hashtags and carousel assets so you spend less time deciding and assembling each post.</div>
       </div>
       <div class="benefit-card">
         <div class="b-icon">🌍</div>
-        <div class="b-title">Deep Local Intelligence</div>
-        <div class="b-body">Niche-specific playbooks, seasonal content calendars, and benchmark data built from real creator and business accounts — so every recommendation is grounded in what actually works.</div>
+        <div class="b-title">Local Business Intelligence</div>
+        <div class="b-body">Recommendations are shaped around your business category and market, with local seasonal and niche context — not one generic Instagram playbook.</div>
       </div>
     </div>
   </div>
@@ -648,7 +581,7 @@
     <p class="section-kicker" style="text-align:center">Pricing</p>
     <h2 class="section-h2" style="text-align:center;margin-bottom:8px">Free while we're in beta</h2>
     <p style="text-align:center;color:var(--text-2);font-size:16px;margin-bottom:36px">
-      Live in 4 countries, free to use right now — no login, no credit card. Works for local businesses and creators.
+      Live in 4 countries and free to use right now — no login, no credit card. Built for local businesses using Instagram to get customers.
     </p>
 
     <!-- 4 country flags -->
@@ -709,7 +642,7 @@
       <p style="font-size:13px;color:var(--text-2);line-height:1.55;margin-bottom:12px">
         We're actively expanding. Email us at
         <a href="mailto:hello@heyama.in" style="color:var(--purple-light);font-weight:600">hello@heyama.in</a>
-        — tell us your country and whether you're a business or a creator,
+        — tell us your country and what kind of business you run,
         and we'll reach out the moment we launch in your market.
       </p>
       <a href="#waitlist-other"
@@ -725,13 +658,13 @@
 <!-- ═══ FINAL CTA ═══ -->
 <section id="cta">
   <div class="wrap" style="text-align:center">
-    <h2 class="cta-h2">Your audience is waiting.<br><em>Stop guessing what they want.</em></h2>
-    <p class="cta-sub">Free audit. No login. Real insights from your real Instagram data. Takes 3–4 minutes.</p>
+    <h2 class="cta-h2">Before another week of posting,<br><em>know what should be posted.</em></h2>
+    <p class="cta-sub" style="max-width:600px">Run your business Instagram through AMA. Use the plan yourself or send it to the person managing your account.</p>
     <a class="btn-primary" href="https://demo.heyama.in" target="_blank" style="margin:0 auto;display:inline-flex">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
       Analyse My Instagram — Free
     </a>
-    <p style="margin-top:14px;font-size:13px;color:var(--text-3)">No login · No credit card · Takes 3–4 minutes</p>
+    <p style="margin-top:14px;font-size:13px;color:var(--text-3)">No login · No password · No credit card · Takes 3–4 minutes</p>
   </div>
 </section>
 
@@ -742,7 +675,7 @@
     <h2 class="section-h2" style="margin-bottom:14px">AMA is expanding globally.</h2>
     <p class="section-sub" style="margin:0 auto 36px">
       We're building deep, local intelligence for new markets — real knowledge of what works
-      for local businesses and creators in your country, not generic advice.
+      for local businesses in your country, not generic advice.
       Tell us where you're from and we'll reach out the moment we launch there.
     </p>
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:500px;margin:0 auto;text-align:left">
@@ -778,12 +711,6 @@
 </footer>
 
 <script>
-  function switchAud(tab) {
-    ['creator','smb'].forEach(t => {
-      document.getElementById('tab-' + t).classList.toggle('active', t === tab);
-      document.getElementById('panel-' + t).classList.toggle('active', t === tab);
-    });
-  }
 
   async function joinWaitlist() {
     const country = document.getElementById('wl-country').value.trim();
